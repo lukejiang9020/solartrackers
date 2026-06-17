@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Luke Jiang's Personal Project</title>
+
+        <style>
+            h1 {
+                font-family: 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                font-size: 72px;
+                margin-left: 20px;
+            }
+
+            h2 {
+                font-family: 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                font-size: 36px;
+                margin-left: 30px;
+                color: purple;
+            }
+
+            p, ul, u {
+                font-family: 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
+                font-size: 16px;
+                margin-left: 30px;
+                margin-right: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .pTitle, .cInfo {
+                background-color: purple;
+                color: white;
+            }
+
+            html, body {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            td {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 16px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pTitle">
+            <br><h1>Personal Project - Solar Tracking</h1><br>
+        </div>
+        <h2>Project Description</h2>
+        <p><strong>Build</strong> a device that will automatically move a solar panel along two axes such that it is perpendicular to the sun. There are two photoresistors that increase/decrease resistance depending on quantity of light received. This allows for the maximum possible energy to be delivered to the solar panel. Left/right and up/down servo motors will be utilized in order to manipulate the position of the solar panel with respect to the sun.</p>
+        <h2>Materials Required</h2>
+        <center>
+        <table>
+            <tr>
+                <td>1 x Arduino Uno REV3</td>
+                <td>4 x 330 ohm Resistor</td>
+            </tr>
+            <tr>
+                <td>4 x Photoresistors 5 Mohm</td>
+                <td>1 x Mini Solar Panel (6V)</td>
+            </tr>
+            <tr>
+                <td>2 x SG90 Micro-servo motor</td>
+                <td>1 x Rotary pentiometer (generic)</td>
+            </tr>
+            <tr>
+                <td>Pushbutton switch, pushbutton</td>
+            </tr>
+        </table>
+        </center>
+        <h2>Why Build This?</h2>
+        <p>Most solar panels are <strong>fixed</strong>, meaning that the amount of power generated from the panels depends on the position of the sun. This creates inefficiencies in power generation and consumption, which could be solved through creating a solar tracking system.</p>
+        <p>When a solar panel is misaligned with the sun (not perpendicular), the power generated from the solar panel begins to drop off. The power drop off is modeled by the equation LOSS = 1 - cos(i), where i is the angle between the top of the solar panel and the sun.</p>
+        <center><img src="SolarPanel_alignment.png" width="640" height="480"></center>
+        <center><p>By <a href="https://en.wikipedia.org/wiki/User:Anmclarke" class="extiw" title="en:User:Anmclarke">Anmclarke</a> at <a class="external text" href="https://en.wikipedia.org">en.wikipedia</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=47214085">Link</a></p></center>
+        <p>With a solar tracking system, the power loss can be eliminated, as the servo motors will constantly adjust to ensure that the maximum possible power is generated.</p>
+        <h2>How It Works, In More Detail</h2>
+        <p>There are different types of solar trackers: <strong>passive</strong>, <strong>active</strong>, and <strong>chronological</strong>. Below is more information on how each type works.</p>
+        <u>Passive solar trackers</u>
+        <ul>
+            <li>Consists of a pair of actuators and filled with expandable gas</li>
+            <li>Utilizes concept of thermal expansion, where both sides are balanced when the solar panel is perpendicular to the sun.</li>
+            <li>When the sun moves, one side is heated, causing it to expand and the solar panel to move.</li>
+        </ul>
+        <u>Active solar trackers (with dual axis rotation)</u>
+        <ul>
+            <li>Determines position of sun through two photoresistors, which change resistance depending on light shining onto them</li>
+            <li></li>
+        </ul>
+        <u>Chronological solar trackers</u>
+        <ul>
+            <li>Uses pre-programmed information about the sun's position, and gradually moves solar panel to match position of the sun based on time of day and seasonal information.</li>
+        </ul>
+        <h2>The Project Diagram</h2>
+        <div class="cInfo">
+            <br><p style="text-align: center;">Copyright © 2026 Luke Jiang. All Rights Reserved.</p><br>
+        </div>
+    </body>
+</html>
