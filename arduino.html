@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Making a Solar Tracker</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .pTitle, .cInfo {
+                background-color: black;
+            }
+
+            .dateInfo {
+                background-color: #126f9a;
+            }
+
+            h2 {
+                color: #a31f34;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="pTitle">
+            <br><h1>Building a Solar Tracker</h1><br>
+        </div>
+        <div class="dateInfo">
+            <br><h3>LUKE JIANG - JULY 1, 2026</h3><br>
+        </div>
+        <!---
+        <p>One significant hurdle with this project is making sure that the Arduino can go into deep sleep whenever it is dark out in order to reduce energy wasted.</p>
+        <p>Luckily, the Arduino <i>does</i> come with the ability to switch between different power modes depending on a signal received on the two interrupt pins. 
+            Below is a diagram of the circuit used to wake up and put the Arduino into deep sleep.</p>
+        <center><img src="imgs/shut off circuit diagram.jpg" width="640" height="480"></center><br>
+        <p>The goal of this circuit is to send a LOW signal to pin 3 when the voltage dependent on the LDR is <i>less</i> than the <strong>reference voltage</strong>, which is connected to the (-) input. 
+            Inversely, we want the comparator to output a HIGH signal when the LDR receives enough light, so that the Arduino can wake up from deep sleep.</p>
+        <p>For the (+) input on the LM339 comparator, a voltage divider is used to ensure that the comparator receives a voltage that is dependent on the LDR's resistance. 
+            Specifically, the LDR is placed in between the 5V power source and a fixed resistor. As the sun sets and the light hitting the LDR decreases, the voltage being sent to the (+) input will decrease until it crosses a threshold set by the (-) input.</p>
+        <p>For the (-) input, a potentiometer is used to calibrate the "threshold" for the voltage used.</p>
+        <p>When the environment is dark enough, the LDR's resistance will be high enough (close to 5 Mohm) that the voltage being sent to the (+) input will be less than the reference voltage
+            in the (-) input. The comparator will detect the discrepancy in voltage and output a LOW value to pin 3, which in turn puts the Arduino into deep sleep mode.
+        </p>
+        -->
+
+        <h2>The Initial Project Design</h2>
+        <p>This project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
+            However, there are key differences in the way that this project is designed.</p>
+        <ol>
+            <li>The LDRs are installed on a cross like holder mounted at a 45 degree angle. This ensures that when the solar panel is improperly aligned with the sun, the voltage readings from the four sensors will be unbalanced, and
+            will indicate to the Arduino which sensor is not receiving enough light.</li>
+            <li>There is an automatic shut-off circuit to assist in conserving energy. Because this Arduino project is simply for demonstration purposes, this circuit will not be of much use.
+                An explanation of the circuit is shown at the top of this page.
+            </li>
+            <li>We will be using sawed wooden planks to support the solar panels and servo motors, as we do not have access to 3D printers or CNC machines.</li>
+            <li>The original code has been extensively rewritten to remove severe bugs and design issues that will impact the effectiveness of the tracker.</li>
+        </ol>
+        <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
+        <center><img src="imgs/DSC03404.JPG" width="640" height="480"></center>
+        <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position.
+            However, very quickly into testing, we realized that the servo motors do not provide enough torque to lift the 20W solar panel that we bought, thus we ended up abandoning this design.
+        </p>
+        <p>The circuit itself contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
+        <center><img src="imgs/circuit1_vdivider.001.jpeg" width="480" height="240"></center>
+        <p>Specifically, the 20W solar panel weighed <strong>1.36</strong> kilograms, meaning that when it is attached to the rotating arm, the SG90 (which has a maximum stall torque of 1.8 kgf·cm) 
+            is unable to generate enough torque to move the solar panel and rotational apparatus (which has a torque of 3.4 kgf·cm). </p>
+        <p>We then bought a much smaller solar panel that would operate at 5V.</p>
+        <h2>The Gimbal</h2>
+        <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. Four limit sensors are installed in each direction of rotation.
+        </p>
+        <center><img src="imgs/31QTzigjPeL._MCnd_AC_.jpg"></center>
+        <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
+            most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
+        </p>
+        <center><video width="640" height="480" controls><source src="vids/Solar Tracker Demo 07-17-2026 (FAST).mov" type="video/mp4">Your browser does not support HTML5 video playback!</video></center>
+        <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
+        <center><a href="gimbal/gimbal.ino"><button>Download the code!</button></a></center>
+        <p>Essentially, the code can be broken down into two main parts: the initialization and the tracking. The initialization portion  
+            is executed once: when the Arduino first receives power (either through the USB port or the DC jack). It sends a HIGH signal (equivalent to a binary 1) 
+            to digital pin 10 and a LOW signal (equivalent to a binary 0) to pin 11, which causes the vertical motor to turn upward. The motor continues to turn upward 
+            until it reaches a vertical limit sensor wired to pin 8, in which a LOW signal is sent to that pin, stopping the motor (by sending a LOW signal to both pins) and reversing the direction of the 
+            motor for 5 seconds (by swapping the HIGH and LOW signals sent to pins 10 and 11). The horizontal motor then activates and continues turning until it reaches a 
+            horizontal limit sensor, which then causes the motor to reverse direction for 5 seconds before stopping. At this point, the initialization sequence has concluded.
+        </p>
+        <p>As the sun moves, the sensor readings will become imbalanced. The Arduino will compare the top/bottom and left/right readings, and once the difference in readings exceeds a 
+            pre-set threshold, the Arduino will send HIGH/LOW signals to the appropriate pins in order to move the solar tracker such that it is perpendicular to the sun. 
+        </p>
+        <p>For example, when the top sensor receives more light than the bottom, the Arduino sends a HIGH signal to pin 10 and a LOW signal to pin 11, as highlighted by the following code block: </p>
+        <code>
+            <pre>
+            if (diffazi >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated
+                // moves solar panel up
+                digitalWrite(10, HIGH);
+                digitalWrite(11, LOW);
+            } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) {
+                // moves solar panel down
+                digitalWrite(10, LOW);
+                digitalWrite(11, HIGH);
+            } else {
+                stopVertical(); // sends LOW signal to both pins 10 and 11
+            }
+            </pre>
+        </code>
+        <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
+        <h2>Managing Power</h2>
+        <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
+            to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
+            to correctly implement everything. 
+        </p>
+        <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
+           unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
+        </p>
+        <center><a href="https://www.ti.com/lit/ds/symlink/lm2596.pdf"><button>View the LM2596 datasheet!</button></a></center><br>
+        <center><img src="imgs/enable disable pin.png"></center>
+        <p>In order to trigger the enable/disable pin depending on ambient light, we used another light sensor installed inside a 
+            Schmitt Trigger circuit, which prevents the solar tracker from turning on/off repeatedly when the light is just at the 
+            threshold. A diagram of the circuit can be seen below.
+        </p>
+        <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
+        <p>A voltage divider creates a branch that leads into the (-) input of the op-amp, which is then complimented by the positive 
+            feedback loop that contains yet another voltage divider. Based on the datasheet for the OP07 op-amp, the voltage swing from the 
+            power supply rail could be as much as 12 volts, meaning that the output voltage of the comparator can be as low as 1 volt given a 
+            13 volt power supply (which closely matches the battery voltage). Thus, V(+) is assumed to be 0.5 volts. 
+        </p>
+        <p>When the </p>
+        <h2>Energy Savings</h2>
+        <p>How much energy will this solar tracker save?</p>
+        <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
+            impossible to compare energy savings based on voltage levels alone.
+        </p>
+        <center><img src="imgs/discharge comparison.png" width="405" height="300"></center>
+        <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
+            current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
+            tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
+            we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker.
+        </p>
+        <div class="cInfo">
+            <br><p style="text-align: center;">Copyright © 2026 Luke Jiang. All Rights Reserved.</p><br>
+        </div>
+    </body>
+</html>
