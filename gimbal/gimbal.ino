@@ -66,7 +66,7 @@ void initialize() {
   Serial.print("Pin 8 reading: ");
   Serial.println(digitalRead(8));
   unsigned long startTime = millis();
-  while (millis() - startTime < 2000) {
+  while (millis() - startTime < 5000) {
     Serial.println("Reversing motor direction...");
     digitalWrite(11, LOW);
     digitalWrite(10, HIGH);

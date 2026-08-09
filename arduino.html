@@ -5,9 +5,6 @@
         <link rel="stylesheet" href="style.css">
         <style>
 
-            h1 {
-                font-weight: lighter;
-            }
             .pTitle, .cInfo {
                 background-color: black;
             }
@@ -28,97 +25,323 @@
             <br><h1>Building a Solar Tracker</h1><br>
         </div>
         <div class="dateInfo">
-            <br><h3>LUKE JIANG - JULY 1, 2026</h3><br>
+            <br><h3>LUKE JIANG - AUGUST 1, 2026</h3><br>
         </div>
         <h2>THE INITIAL PROJECT DESIGN</h2>
-        <p>The initial design for this project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
-            However, there are key differences in the way that this project is designed, as we do not have access to 3-D printers or CNC machines.</p>
-        <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
-        <center><img src="imgs/DSC03407.JPG" width="640" height="480"></center>
-        <i><p style="text-align: center;">NOTE: The solar panel shown in this image is a much smaller 12V 300mA (3.6W) panel, which does not provide nearly as much energy as the 20W panel.</p></i>
-        <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position.
-            However, very quickly into testing, we realized that the servo motors do not provide enough torque to lift the 20W solar panel that we bought, thus we ended up abandoning this design.
-        </p>
-        <p>The circuit itself contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
-        <center><img src="imgs/circuit1_vdivider.001.jpeg" width="480" height="240"></center>
-        <p>Specifically, the 20W solar panel weighed <strong>1.36</strong> kilograms, meaning that when it is attached to the rotating arm, the SG90 (which has a maximum stall torque of 1.8 kgf·cm) 
-            is unable to generate enough torque to move the solar panel and rotational apparatus (which has a torque of 3.4 kgf·cm). </p>
-        <p>We then bought a much smaller solar panel that would operate at 5V.</p>
-        <center><a href="servo/servo.ino"><button>Download the code!</button></a></center>
+            <p>The initial design for this project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
+                However, there are key differences in the way that this project is designed, as we do not have access to 3-D printers or CNC machines.</p>
+            <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
+            <center><img src="imgs/DSC03407.JPG" width="640" height="480"></center>
+            <i><p style="text-align: center;">NOTE: The solar panel shown in this image is a much smaller 12V 300mA (3.6W) panel, which does not provide nearly as much energy as the 20W panel.</p></i>
+            <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position.
+                However, very quickly into testing, we realized that the servo motors do not provide enough torque to lift the 20W solar panel that we bought, thus we ended up abandoning this design.
+            </p>
+            <p>Specifically, the 20W solar panel weighed <strong>1.36</strong> kilograms, meaning that when it is attached to the rotating arm, the SG90 (which has a maximum stall torque of 1.8 kgf·cm) 
+                is unable to generate enough torque to move the solar panel and rotational apparatus (which has a torque of 3.4 kgf·cm). </p>
+            <p>We then bought a much smaller solar panel that would operate at 12V 300mA, so that it could be mounted on this tracker apparatus. This does not produce 
+                enough energy, though, as during testing, we discovered that in order to hold the solar panel in place, the vertical servo motor must constantly provide a large 
+                amount of current (sometimes up to 400 mA when the solar panel is low enough). This makes this apparatus far too inefficient for practical purposes.
+            </p>
+            <p>The circuit itself contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
+            <center><img src="imgs/circuit1_vdivider.001.jpeg" width="480" height="240"></center>
+            <center><img src="imgs/block diagram.bmp" width="1535" height="863"></center>
+            <center><a href="servo/servo.ino"><button>Download the code!</button></a></center>
         <h2>THE GIMBAL</h2>
-        <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. Four limit sensors are installed in each direction of rotation.
-        </p>
-        <center><img src="imgs/31QTzigjPeL._MCnd_AC_.jpg"></center>
-        <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
-            most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
-        </p>
-        <center><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
-        <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
-        <center><a href="gimbal/gimbal.ino"><button>Download the code!</button></a></center>
-        <p>Essentially, the code can be broken down into two main parts: the initialization and the tracking. The initialization portion  
-            is executed once: when the Arduino first receives power (either through the USB port or the DC jack). It sends a HIGH signal (equivalent to a binary 1) 
-            to digital pin 10 and a LOW signal (equivalent to a binary 0) to pin 11, which causes the vertical motor to turn upward. The motor continues to turn upward 
-            until it reaches a vertical limit sensor wired to pin 8, in which a LOW signal is sent to that pin, stopping the motor (by sending a LOW signal to both pins) and reversing the direction of the 
-            motor for 5 seconds (by swapping the HIGH and LOW signals sent to pins 10 and 11). The horizontal motor then activates and continues turning until it reaches a 
-            horizontal limit sensor, which then causes the motor to reverse direction for 5 seconds before stopping. At this point, the initialization sequence has concluded.
-        </p>
-        <p>As the sun moves, the sensor readings will become imbalanced. The Arduino will compare the top/bottom and left/right readings, and once the difference in readings exceeds a 
-            pre-set threshold, the Arduino will send HIGH/LOW signals to the appropriate pins in order to move the solar tracker such that it is perpendicular to the sun. 
-        </p>
-        <p>For example, when the top sensor receives more light than the bottom, the Arduino sends a HIGH signal to pin 10 and a LOW signal to pin 11, as highlighted by the following code block: </p>
-        <code>
-            <pre>
-            if (diffazi >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated
-                // moves solar panel up
-                digitalWrite(10, HIGH);
-                digitalWrite(11, LOW);
-            } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) {
-                // moves solar panel down
-                digitalWrite(10, LOW);
-                digitalWrite(11, HIGH);
-            } else {
-                stopVertical(); // sends LOW signal to both pins 10 and 11
-            }
-            </pre>
-        </code>
-        <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
+            <p>Since our original apparatus was too inefficient for practical purposes, we decided to </p>
+            <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. 
+                Four limit sensors are installed in each direction of rotation.
+            </p>
+            <center><img src="imgs/31QTzigjPeL._MCnd_AC_.jpg"></center>
+            <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
+                most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
+            </p>
+            <center><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+            <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
+            <center><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></center>
+            <p>Essentially, the code can be broken down into two main parts: the initialization and the tracking. The initialization portion  
+                is executed once: when the Arduino first receives power (either through the USB port or the DC jack). It sends a HIGH signal (equivalent to a binary 1) 
+                to digital pin 10 and a LOW signal (equivalent to a binary 0) to pin 11, which causes the vertical motor to turn upward. The motor continues to turn upward 
+                until it reaches a vertical limit sensor wired to pin 8, in which a LOW signal is sent to that pin, stopping the motor (by sending a LOW signal to both pins) and reversing the direction of the 
+                motor for 5 seconds (by swapping the HIGH and LOW signals sent to pins 10 and 11). The horizontal motor then activates and continues turning until it reaches a 
+                horizontal limit sensor, which then causes the motor to reverse direction for 2 seconds before stopping. At this point, the initialization sequence has concluded.
+            </p>
+            <p>As the sun moves, the sensor readings will become imbalanced. The Arduino will compare the top/bottom and left/right readings, and once the difference in readings exceeds a 
+                pre-set threshold, the Arduino will send HIGH/LOW signals to the appropriate pins in order to move the solar tracker such that it is perpendicular to the sun. 
+            </p>
+            <p>For example, when the top sensor receives more light than the bottom, the Arduino sends a HIGH signal to pin 10 and a LOW signal to pin 11, as highlighted by the following code block: </p>
+            <button type="button" class="collapsible" id="expandable">View code sample</button>
+            <div class="collapsible_content">
+                <code>
+                    <pre>
+                    if (diffazi >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated AND compares the difference in readings to a set threshold
+                        // moves solar panel up
+                        digitalWrite(10, HIGH);
+                        digitalWrite(11, LOW);
+                    } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) { // if above condition was not met, then the absolute value of the difference is compared to the threshold value
+                        // moves solar panel down
+                        digitalWrite(10, LOW);
+                        digitalWrite(11, HIGH);
+                    } else {
+                        stopVertical(); // sends LOW signal to both pins 10 and 11 to stop the vertical movement
+                    }
+                    </pre>
+                </code>
+            </div>
+            <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
         <h2>MANAGING POWER</h2>
-        <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
-            to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
-            to correctly implement everything. 
-        </p>
-        <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
-           unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
-        </p>
-        <center><a href="https://www.ti.com/lit/ds/symlink/lm2596.pdf"><button>View the LM2596 datasheet!</button></a></center><br>
-        <center><img src="imgs/enable disable pin.png"></center>
-        <!---
-        <p>In order to trigger the enable/disable pin depending on ambient light, we used another light sensor installed inside a 
-            Schmitt Trigger circuit, which prevents the solar tracker from turning on/off repeatedly when the light is just at the 
-            threshold. A diagram of the circuit can be seen below.
-        </p>
-        <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
-        <p>A voltage divider creates a branch that leads into the (-) input of the op-amp, which is then complimented by the positive 
-            feedback loop that contains yet another voltage divider. Based on the datasheet for the OP07 op-amp, the voltage swing from the 
-            power supply rail could be as much as 12 volts, meaning that the output voltage of the comparator can be as low as 1 volt given a 
-            13 volt power supply (which closely matches the battery voltage).
-        </p>
-        <p>When the </p>        -->
+            <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
+                to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
+                to correctly implement everything. 
+            </p>
+            <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
+            unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
+            </p>
+            <center><a href="https://www.ti.com/lit/ds/symlink/lm2596.pdf"><button>View the LM2596 datasheet!</button></a></center><br>
+            <center><img src="imgs/enable disable pin.png"></center>
+            <p>In order to trigger the enable/disable pin depending on ambient light, we used another light sensor installed inside a 
+                Schmitt Trigger circuit, which prevents the solar tracker from turning on/off repeatedly when the light is just at the 
+                threshold. A diagram of the circuit can be seen below.
+            </p>
+            <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
         <h2>ENERGY SAVINGS</h2>
-        <p>How much energy will this solar tracker save?</p>
-        <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
-            impossible to compare energy savings based on voltage levels alone.
-        </p>
+            <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
+            <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
+                impossible to compare energy savings based on voltage levels alone.
+            </p>
 
-        <center><img src="imgs/discharge comparison.png" width="405" height="300"></center>
-        <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
-            current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
-            tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
-            we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker.
-        </p>
+            <center><img src="imgs/discharge comparison.png" width="405" height="300"></center>
+            <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
+                current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
+                tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
+                we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker. The test was performed 
+                over the course of several days from July 22-30.
+            </p>
+            <center><img src="imgs/energy graph.png" width="561" height="293"></center>
+            <button type="button" class="dataTable" id="tableViewer">View raw data</button>
+            <div class="collapsible_content" style="width: 50%; margin: 0 auto;">
+                <table class="tg"><thead>
+                    <tr>
+                        <th class="tg-g0br">Time of Day</th>
+                        <th class="tg-g0br">Fixed at 29 Degrees</th>
+                        <th class="tg-g0br">Single Axis</th>
+                        <th class="tg-g0br">Dual Axis</th>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                        <td class="tg-c3ow">6:45 AM</td>
+                        <td class="tg-c3ow">0.005</td>
+                        <td class="tg-c3ow">0.23</td>
+                        <td class="tg-c3ow">0.35</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">7:15 AM</td>
+                        <td class="tg-c3ow">0.03</td>
+                        <td class="tg-c3ow">0.5</td>
+                        <td class="tg-c3ow">0.55</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">7:45 AM</td>
+                        <td class="tg-c3ow">0.13</td>
+                        <td class="tg-c3ow">0.67</td>
+                        <td class="tg-c3ow">0.74</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">8:15 AM</td>
+                        <td class="tg-c3ow">0.23</td>
+                        <td class="tg-c3ow">0.77</td>
+                        <td class="tg-c3ow">0.84</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">8:45 AM</td>
+                        <td class="tg-c3ow">0.37</td>
+                        <td class="tg-c3ow">0.85</td>
+                        <td class="tg-c3ow">0.86</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">9:15 AM</td>
+                        <td class="tg-c3ow">0.49</td>
+                        <td class="tg-c3ow">0.89</td>
+                        <td class="tg-c3ow">0.9</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">9:45 AM</td>
+                        <td class="tg-c3ow">0.6</td>
+                        <td class="tg-c3ow">0.94</td>
+                        <td class="tg-c3ow">0.93</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">10:15 AM</td>
+                        <td class="tg-c3ow">0.7</td>
+                        <td class="tg-c3ow">0.96</td>
+                        <td class="tg-c3ow">0.96</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">10:45 AM</td>
+                        <td class="tg-c3ow">0.8</td>
+                        <td class="tg-c3ow">0.98</td>
+                        <td class="tg-c3ow">0.99</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">11:15 AM</td>
+                        <td class="tg-c3ow">0.87</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">11:45 AM</td>
+                        <td class="tg-c3ow">0.93</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1.02</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">12:15 PM</td>
+                        <td class="tg-c3ow">0.98</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">1.03</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">12:45 PM</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">0.98</td>
+                        <td class="tg-c3ow">1.03</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">1:15 PM</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">1.03</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">1:45 PM</td>
+                        <td class="tg-c3ow">0.97</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">1.02</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">2:15 PM</td>
+                        <td class="tg-c3ow">0.93</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1.01</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">2:45 PM</td>
+                        <td class="tg-c3ow">0.88</td>
+                        <td class="tg-c3ow">0.99</td>
+                        <td class="tg-c3ow">0.97</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">3:15 PM</td>
+                        <td class="tg-c3ow">0.83</td>
+                        <td class="tg-c3ow">0.98</td>
+                        <td class="tg-c3ow">0.97</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">3:45 PM</td>
+                        <td class="tg-c3ow">0.75</td>
+                        <td class="tg-c3ow">0.95</td>
+                        <td class="tg-c3ow">0.95</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">4:15 PM</td>
+                        <td class="tg-c3ow">0.64</td>
+                        <td class="tg-c3ow">0.93</td>
+                        <td class="tg-c3ow">0.92</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">4:45 PM</td>
+                        <td class="tg-c3ow">0.53</td>
+                        <td class="tg-c3ow">0.89</td>
+                        <td class="tg-c3ow">0.88</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">5:15 PM</td>
+                        <td class="tg-c3ow">0.36</td>
+                        <td class="tg-c3ow">0.89</td>
+                        <td class="tg-c3ow">0.86</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">5:45 PM</td>
+                        <td class="tg-c3ow">0.28</td>
+                        <td class="tg-c3ow">0.84</td>
+                        <td class="tg-c3ow">0.87</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">6:15 PM</td>
+                        <td class="tg-c3ow">0.16</td>
+                        <td class="tg-c3ow">0.74</td>
+                        <td class="tg-c3ow">0.78</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">6:45 PM</td>
+                        <td class="tg-c3ow">0.05</td>
+                        <td class="tg-c3ow">0.6</td>
+                        <td class="tg-c3ow">0.62</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">7:15 PM</td>
+                        <td class="tg-c3ow">0.01</td>
+                        <td class="tg-c3ow">0.3</td>
+                        <td class="tg-c3ow">0.41</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                        <td class="tg-0pky"></td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <p>The graph above illustrates the current (in A) produced by the solar panel, measured at 30 minute intervals. We used a power meter, which logs the voltage of the 
+                battery, along with the current draw. By subtracting the known load we placed (which consisted of a lamp and an inverter) by the current drawn shown on the 
+                power meter, we obtain the amount of current produced by the solar panel.
+            </p>
+            <p>Using a midpoint Riemann sum to approximate the total energy produced by the solar panel in both conditions, we discover that the solar panel 
+                in the fixed position produced <strong>7.249</strong> Ah from 6:45 AM to 6:15 PM compared to <strong>11.06</strong> Ah when the solar tracker is 
+                enabled. This means that the solar tracker causes the solar panel to produce <strong>52.6%</strong> more energy compared to when it is mounted in 
+                a fixed position, optimal for the entire year.
+            </p>
+            <p>In addition, we can also factor in additional circumstances such as the tracker operating on only the vertical axis (essentially a single axis tracker, which is more cost-efficient). The solar panel, 
+               operating with only a single axis tracker, produced <strong>10.79</strong> Ah, which is very close to the dual axis tracker's energy production. 
+            </p>
         <div class="cInfo">
-            <br><p style="text-align: center;">Copyright © 2026 Luke Jiang. All Rights Reserved.</p>
+            <br><p style="text-align: center;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
             <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p>Contact me!</p></a><br>
         </div>
     </body>
+
+    <script>
+
+        function expandContent(className, id, textInactive, textActive, bgInactive, bgClicked) {
+            for (let i = 0; i < className.length; i++) {
+                className[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display == "block") {
+                        content.style.display = "none";
+                        id.style.backgroundColor = bgInactive;
+                        id.textContent = textInactive;
+                    } else {
+                        content.style.display = "block";
+                        id.textContent = textActive;
+                        id.style.backgroundColor = bgClicked;
+                    }
+                });
+            }
+        }
+
+        var coll = document.getElementsByClassName("collapsible");
+        var coll2 = document.getElementsByClassName("dataTable");
+        var btnId = document.getElementById("expandable");
+        var btn2Id = document.getElementById("tableViewer");
+
+        expandContent(coll, btnId, "View code sample", "Collapse code sample", "rgb(0, 113, 227)", "red");
+        expandContent(coll2, btn2Id, "View raw data", "Collapse raw data", "rgb(0, 113, 227)", "red");
+
+    </script>
 </html>

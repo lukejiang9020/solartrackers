@@ -1,0 +1,1276 @@
+MIME-Version: 1.0
+X-Document-Type: Worksheet
+Content-Location: file:///C:/8CB25545/Voltage_discharge.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="windows-1252"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dwindows-125=
+2">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 12">
+<link rel=3DFile-List href=3D"Voltage_discharge_files/filelist.xml">
+<style id=3D"Voltage_discharge_1506_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl641506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #3F3F3F;
+	border-left:.5pt solid #A5A5A5;
+	background:#BDC0BF;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl651506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #3F3F3F;
+	border-left:.5pt solid #A5A5A5;
+	background:#BDC0BF;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl661506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #3F3F3F;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #A5A5A5;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl671506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl681506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border:.5pt solid #A5A5A5;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl691506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #3F3F3F;
+	border-left:.5pt solid #A5A5A5;
+	background:#BDC0BF;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl701506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"Medium Time";
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #3F3F3F;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl711506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"Medium Time";
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl721506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border:.5pt solid #A5A5A5;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl731506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"Medium Time";
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl741506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #A5A5A5;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl751506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Helvetica;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:top;
+	border-top:.5pt solid #3F3F3F;
+	border-right:.5pt solid #A5A5A5;
+	border-bottom:.5pt solid #A5A5A5;
+	border-left:.5pt solid #3F3F3F;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl761506
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Helvetica Neue";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--The following information was generated by Microsoft Office Excel's Pub=
+lish
+as Web Page wizard.-->
+<!--If the same item is republished from Excel, all information between the=
+ DIV
+tags will be replaced.-->
+<!----------------------------->
+<!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
+<!----------------------------->
+
+<div id=3D"Voltage_discharge_1506" align=3Dcenter x:publishsource=3D"Excel">
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1180 class=3Dxl65=
+5351506
+ style=3D'border-collapse:collapse;table-layout:fixed;width:880pt'>
+ <col class=3Dxl655351506 width=3D118 span=3D10 style=3D'mso-width-source:u=
+serset;
+ mso-width-alt:4181;width:88pt'>
+ <tr height=3D37 style=3D'mso-height-source:userset;height:27.75pt'>
+  <td colspan=3D9 height=3D37 class=3Dxl761506 width=3D1062 style=3D'height=
+:27.75pt;
+  width:792pt'>Midpoint Riemann Sums (</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D44 style=3D'mso-height-source:userset;height:33.0pt'>
+  <td height=3D44 class=3Dxl641506 width=3D118 style=3D'height:33.0pt;width=
+:88pt'><a
+  name=3D"RANGE!A2">Time of Day</a></td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Fi=
+xed (A)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Av=
+erage *
+  Time</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>In=
+terval
+  (hr)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Li=
+ght off
+  (Ah)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Li=
+ght on
+  (Ah)</td>
+  <td class=3Dxl691506 width=3D118 style=3D'border-left:none;width:88pt'>Cu=
+rrent by
+  Solar (Tracker Off)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Cu=
+rrent by
+  Solar (Tracker On)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Av=
+erage *
+  Time (Tracker Off)</td>
+  <td class=3Dxl651506 width=3D118 style=3D'border-left:none;width:88pt'>Av=
+erage *
+  Time (Tracker On)</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.55pt'>
+  <td height=3D27 class=3Dxl701506 align=3Dright width=3D118 style=3D'heigh=
+t:20.55pt;
+  border-top:none;width:88pt'>6:45 AM</td>
+  <td class=3Dxl751506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.72</td>
+  <td class=3Dxl661506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.5</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.69</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>1.3</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.29</td>
+  <td class=3Dxl661506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>7:15 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.59</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3275</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.5</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.025</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+1975</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>7:45 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.47</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.265</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.22</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.62</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.08</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+28</td>
+ </tr>
+ <tr height=3D26 style=3D'mso-height-source:userset;height:20.1pt'>
+  <td height=3D26 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.1pt;
+  border-top:none;width:88pt'>8:15 AM</td>
+  <td class=3Dxl671506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.35</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.205</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.34</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.72</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.14</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+335</td>
+ </tr>
+ <tr height=3D26 style=3D'mso-height-source:userset;height:20.1pt'>
+  <td height=3D26 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.1pt;
+  border-top:none;width:88pt'>8:45 AM</td>
+  <td class=3Dxl671506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.24</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1475</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.45</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.74</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1975</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+365</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>9:15 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.12</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.09</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.57</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.78</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.255</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+38</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl731506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>9:15 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.71</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.59</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.78</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>9:45 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.64</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3375</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.66</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.81</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3125</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+3975</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>10:15 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.54</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.295</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.76</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.84</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.355</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4125</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>10:45 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.47</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.2525</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.83</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.87</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3975</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4275</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>11:15 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.4</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.2175</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.9</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.88</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.4325</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4375</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>11:45 AM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.36</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.19</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.94</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.9</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.46</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+445</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>12:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.34</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.175</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.96</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.9</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.475</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+45</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>12:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.32</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.165</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.98</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.91</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.485</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4525</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>1:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.33</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1625</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.97</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.91</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.4875</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+455</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>1:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.34</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1675</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.96</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.9</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.4825</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4525</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>2:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.38</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.18</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.92</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.9</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.47</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+45</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>2:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.42</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.2</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.88</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.88</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.45</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+445</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>3:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.47</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.2225</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.83</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.86</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.4275</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+435</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>3:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.55</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.255</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.75</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.84</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.395</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+425</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>4:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.65</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.65</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.82</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.35</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+415</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>4:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.75</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.35</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.55</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.78</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.3</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+4</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>4:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.1</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.59</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.78</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>5:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.2</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.075</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.49</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.74</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.27</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+38</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>5:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.32</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.13</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.37</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.75</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.215</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+3725</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>6:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.45</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1925</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.24</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.66</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1525</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+3525</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>6:45 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.59</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.1</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.5</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.085</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+29</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl711506 align=3Dright width=3D118 style=3D'heigh=
+t:20.4pt;
+  border-top:none;width:88pt'>7:15 PM</td>
+  <td class=3Dxl741506 align=3Dright width=3D118 style=3D'border-top:none;w=
+idth:88pt'>0.72</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl721506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0</td>
+  <td class=3Dxl661506 align=3Dright width=3D118 style=3D'border-left:none;=
+width:88pt'>0.29</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>0.025</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>0.=
+1975</td>
+ </tr>
+ <tr height=3D27 style=3D'mso-height-source:userset;height:20.4pt'>
+  <td height=3D27 class=3Dxl741506 width=3D118 style=3D'height:20.4pt;borde=
+r-top:none;
+  width:88pt'>SUM</td>
+  <td class=3Dxl741506 width=3D118 style=3D'border-top:none;width:88pt'>&nb=
+sp;</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>4.9025</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 width=3D118 style=3D'border-top:none;border-left:non=
+e;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl681506 align=3Dright width=3D118 style=3D'border-top:none;b=
+order-left:
+  none;width:88pt'>7.615</td>
+  <td class=3Dxl655351506 align=3Dright width=3D118 style=3D'width:88pt'>9.=
+65</td>
+ </tr>
+ <tr height=3D26 style=3D'mso-height-source:userset;height:19.95pt'>
+  <td height=3D26 class=3Dxl741506 width=3D118 style=3D'height:19.95pt;bord=
+er-top:none;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D26 style=3D'mso-height-source:userset;height:19.95pt'>
+  <td height=3D26 class=3Dxl671506 width=3D118 style=3D'height:19.95pt;bord=
+er-top:none;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <tr height=3D26 style=3D'mso-height-source:userset;height:19.95pt'>
+  <td height=3D26 class=3Dxl741506 width=3D118 style=3D'height:19.95pt;bord=
+er-top:none;
+  width:88pt'>&nbsp;</td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+  <td class=3Dxl655351506 width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+  <td width=3D118 style=3D'width:88pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD-->
+<!----------------------------->
+</body>
+
+</html>

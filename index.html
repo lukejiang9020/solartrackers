@@ -11,29 +11,11 @@
         <h2>Project Description</h2>
         <p><strong>Build</strong> a device that will automatically move a solar panel along two axes such that it is perpendicular to the sun. There are two photoresistors that increase/decrease resistance depending on quantity of light received. This allows for the maximum possible energy to be delivered to the solar panel. Left/right and up/down servo motors will be utilized in order to manipulate the position of the solar panel with respect to the sun.</p>
         <h2>Materials Required</h2>
-        <center>
-        <table>
-            <tr>
-                <td>1 x Arduino Uno REV3</td>
-                <td>4 x 330 ohm Resistor</td>
-            </tr>
-            <tr>
-                <td>4 x Photoresistors 5 Mohm</td>
-                <td>1 x Mini Solar Panel (6V)</td>
-            </tr>
-            <tr>
-                <td>2 x SG90 Micro-servo motor</td>
-                <td>1 x Rotary pentiometer (generic)</td>
-            </tr>
-            <tr>
-                <td>Pushbutton switch, pushbutton</td>
-            </tr>
-        </table>
-        </center>
+        <p>You can find the required materials <a href="Components List.xlsx">here</a>.</p>
         <h2>Why Build This?</h2>
         <p>Most solar panels are <strong>fixed</strong>, meaning that the amount of power generated from the panels depends on the position of the sun. This creates inefficiencies in power generation and consumption, which could be solved through creating a solar tracking system.</p>
         <p>When a solar panel is misaligned with the sun (not perpendicular), the power generated from the solar panel begins to drop off. The power drop off is modeled by the equation LOSS = 1 - cos(i), where i is the angle between the top of the solar panel and the sun.</p>
-        <center><img src="SolarPanel_alignment.png" width="640" height="480"></center>
+        <center><img src="imgs/SolarPanel_alignment.png" width="640" height="480"></center>
         <center><p>By <a href="https://en.wikipedia.org/wiki/User:Anmclarke" class="extiw" title="en:User:Anmclarke">Anmclarke</a> at <a class="external text" href="https://en.wikipedia.org">en.wikipedia</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=47214085">Link</a></p></center>
         <p>With a solar tracking system, the power loss can be eliminated, as the servo motors will constantly adjust to ensure that the maximum possible power is generated.</p>
         <h2>How It Works, In More Detail</h2>
