@@ -33,6 +33,10 @@ p, ul, u, ol {
     line-height: 1.5;
 }
 
+pre {
+    margin-left: -50px;
+}
+
 .pTitle, .cInfo {
     background-color: #a31f34;
     color: white;
@@ -43,7 +47,8 @@ html, body {
     padding: 0px;
 }
 
-td, tr {
+td, th {
+    border-collapse: separate;
     font-family: monospace;
     font-size: 16px;
     padding-left: 20px;
@@ -86,7 +91,6 @@ button {
 }
 
 .collapsible_content {
-    padding: 0 18px;
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
