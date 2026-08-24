@@ -1,5 +1,13 @@
- h1 {
-    font-family: -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
+@font-face {
+ font-family: 'Eurostile';
+ src: url('eurostile.TTF') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+ font-display: swap;
+}
+
+h1 {
+    font-family: 'Eurostile', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
     font-weight: lighter;
     font-size: 72px;
     margin-left: 20px;
