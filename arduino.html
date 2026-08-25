@@ -20,7 +20,7 @@
         <style>
 
             .pTitle, .cInfo {
-                background-color: #006400;
+                background-color: black;
             }
 
             .dateInfo {
@@ -28,11 +28,7 @@
             }
 
             h2 {
-                color: #90EE90;
-            }
-            body {
-                background-color: black;
-                color: white;
+                color: #006400;
             }
 
             
@@ -43,9 +39,9 @@
             <br><h1>Building a Solar Tracker</h1><br>
         </div>
         <div class="dateInfo">
-            <br><h3>LUKE JIANG - AUGUST 1, 2026</h3><br>
+            <br><h3>By: LUKE JIANG - AUGUST 1, 2026</h3><br>
         </div>
-        <h2>THE INITIAL PROJECT DESIGN</h2>
+        <h2>The Initial Project Design</h2>
             <p>The initial design for this project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
                 However, there are key differences in the way that this project is designed, as we do not have access to 3-D printers or CNC machines.</p>
             <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
@@ -66,7 +62,7 @@
             <p>Below is a demonstration of the solar tracker in action with a flashlight simulating sunlight.</p>
             <center><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
             <center><a href="servo/servo.ino"><button>Download the code!</button></a></center>
-        <h2>THE GIMBAL</h2>
+        <h2>The Gimbal</h2>
             <p>Since our original apparatus was too inefficient for practical purposes, we decided to find another apparatus that could hold our solar panel.</p>
             <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. 
                 Four limit sensors are installed in each direction of rotation. This gimbal was perfect for our project, as it had a maximum load of 5 kg for 12V DC, which 
@@ -111,7 +107,7 @@
                 </code>
             </div>
             <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
-        <h2>MANAGING POWER</h2>
+        <h2>Managing Power</h2>
             <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
                 to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
                 to correctly implement everything. 
@@ -126,7 +122,7 @@
                 threshold. A diagram of the circuit can be seen below.
             </p>
             <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
-        <h2>ENERGY SAVINGS</h2>
+        <h2>Energy Savings</h2>
             <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
             <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
                 impossible to compare energy savings based on voltage levels alone.
