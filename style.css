@@ -6,6 +6,14 @@
  font-display: swap;
 }
 
+@font-face {
+ font-family: 'Wevli Regular';
+ src: url('wevli_regular.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+ font-display: swap;
+}
+
 h1 {
     font-family: 'Eurostile', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
     font-weight: lighter;
@@ -15,7 +23,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Eurostile', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
+    font-family: 'Wevli Regular', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
     font-weight: normal;
     font-size: 36px;
     margin-left: 30px;
