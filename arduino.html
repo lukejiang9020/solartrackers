@@ -108,13 +108,16 @@
                 </code>
             </div>
             <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
+            <p>To summarize, there is a flowchart below that illustrates the interactions between the different components in the solar tracker.</p>
+            <center><img src="imgs/basic_diagram.jpg" width="763" height="576"></center>
         <h2>Managing Power</h2>
             <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
-                to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
-                to correctly implement everything. 
+                to charge the battery while it powers the solar tracking circuit. By decreasing power consumption, we can maximize the increase in energy production that the 
+                solar tracker provides.
             </p>
             <center><img src="https://c1.neweggimages.com/productimage/nb1280/ASDGD2311170FT2PH73.jpg" width="320" height="177"></center>
-            <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
+            <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. We set the 
+            voltage to 7.0 volts, which is the maximum voltage for transistor-transistor logic (TTL), which is necessary to drive the motors. More importantly, this 
             unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
             </p>
             <center><img src="imgs/enable disable pin.png"></center>
