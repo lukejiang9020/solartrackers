@@ -26,7 +26,7 @@ h2 {
     font-family: 'Wevli Regular', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
     font-weight: normal;
     font-size: 36px;
-    margin-left: 30px;
+    margin-left: 50px;
     color: #a31f34;
 }
 
@@ -42,10 +42,10 @@ h3 {
 p, ul, u, ol {
     font-family: 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     line-height: 1.5;
 }
 
