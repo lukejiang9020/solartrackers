@@ -12,7 +12,6 @@
           gtag('config', 'G-FRB9LBQZDG');
         </script>
 
-        <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff7a123b04bb41a29a646ee309b85701"}'></script><!-- End Cloudflare Web Analytics -->
 
         
         <title>Making a Solar Tracker</title>
@@ -38,7 +37,7 @@
             <br><h1>Building a Solar Tracker</h1><br>
         </div>
         <div class="dateInfo">
-            <br><h3 style="font-family: 'Wevli Regular', system-ui;">By Luke Jiang</h3><br>
+            <br><h3 style="font-family: 'Eurostile', system-ui;">By Luke Jiang</h3><br>
         </div>
         <h2>The Initial Project Design</h2>
             <p>The initial design for this project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
@@ -95,7 +94,7 @@
                         // moves solar panel up
                         digitalWrite(10, HIGH);
                         digitalWrite(11, LOW);
-                    } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) { // if above condition was not met, then the absolute value of the difference is compared to the threshold value
+                    } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) { 
                         // moves solar panel down
                         digitalWrite(10, LOW);
                         digitalWrite(11, HIGH);
@@ -114,10 +113,9 @@
             <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
             unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
             </p>
-            <center><a href="https://www.ti.com/lit/ds/symlink/lm2596.pdf"><button>View the LM2596 datasheet!</button></a></center><br>
             <center><img src="imgs/enable disable pin.png"></center>
             <p>In order to trigger the enable/disable pin depending on ambient light, we used another light sensor installed inside a 
-                Schmitt Trigger circuit, which prevents the solar tracker from turning on/off repeatedly when the light is just at the 
+                Schmitt Trigger circuit, which uses hysteresis to prevent the solar tracker from turning on/off repeatedly when the light is just at the 
                 threshold. A diagram of the circuit can be seen below.
             </p>
             <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
@@ -329,8 +327,8 @@
             </p>
         <div class="cInfo">
             <br><p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
-            <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white; font-family: 'Wevli Regular', system-ui;"><p>Contact me!</p></a>
-            <a href="http://www.onlinewebfonts.com" style="text-align: center; color: white; font-family: 'Wevli Regular', system-ui;"><p>Web Fonts by Online WebFonts</p></a><br>
+            <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Contact me!</p></a>
+            <a href="http://www.onlinewebfonts.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Web Fonts by Online WebFonts</p></a><br>
         </div>
     </body>
 
