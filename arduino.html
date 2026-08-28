@@ -73,8 +73,12 @@
             <center><img src="imgs/BE5_Fig1-554x800.jpg"></center>
             <center><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
             <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
+            <p>On July 17th, my father and I positioned the solar tracker in an optimum location in our backyard, such that the photoresistors will receive uninterrupted sunlight for the duration of our 
+                video recording. From around 9:00 AM to 5:00 PM, we captured footage of the solar tracker using a camcorder, and then sped up the footage to create the timelapse you see above.</p>
             <center><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></center>
-            <p>Essentially, the code can be broken down into two main parts: the initialization and the tracking. The initialization portion  
+            <p>As noted previously, instead of using potentiometers and comparators, the motors, limit sensors, and photoresistors are connected directly to the Arduino Uno, with the motors connected to digital pins 10/11/12/13, 
+            the limit sensors to digital pins 6/7/8/9, and the photoresistors to analog pins A0/A1/A2/A3. I created a software program for the Uno in order to make this solar tracker work as intended.</p>
+            <p>Essentially, the software can be broken down into two main parts: the initialization and the tracking. The initialization portion  
                 is executed once: when the Arduino first receives power (either through the USB port or the DC jack). It sends a HIGH signal (equivalent to a binary 1) 
                 to digital pin 10 and a LOW signal (equivalent to a binary 0) to pin 11, which causes the vertical motor to turn upward. The motor continues to turn upward 
                 until it reaches a vertical limit sensor wired to pin 8, in which a LOW signal is sent to that pin, stopping the motor (by sending a LOW signal to both pins) and reversing the direction of the 
@@ -325,6 +329,8 @@
             <p>In addition, we can also factor in additional circumstances such as the tracker operating on only the vertical axis (essentially a single axis tracker, which is more cost-efficient). The solar panel, 
                operating with only a single axis tracker, produced <strong>10.79</strong> Ah, which is very close to the dual axis tracker's energy production. 
             </p>
+            <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's energy production. However, a single-axis tracker system is 
+            usually more cost-efficient and practical while also increasing energy production by a similar factor as a dual-axis system.</p>
         <div class="cInfo">
             <br><p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
             <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Contact me!</p></a>
