@@ -54,12 +54,11 @@
                 enough energy, though, as during testing, we discovered that in order to hold the solar panel in place, the vertical servo motor must constantly provide a large 
                 amount of current (sometimes up to 400 mA when the solar panel is low enough). This makes this apparatus far too inefficient for practical purposes.
             </p>
-            <p>The circuit itself contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
+            <p>The circuit contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
             <center><img src="imgs/circuit1_vdivider.001.jpeg" width="480" height="240"></center>
             <center><img src="imgs/block diagram.bmp" width="767" height="432"></center>
-            <p>Below is a demonstration of the solar tracker in action with a flashlight simulating sunlight.</p>
+            <p>Below is a demonstration of the solar tracker in action with a flashlight, which simulates the sun hitting the four photoresistors.</p>
             <center><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
-            <center><a href="servo/servo.ino"><button>Download the code!</button></a></center>
         <h2>The Gimbal</h2>
             <p>Since our original apparatus was too inefficient for practical purposes, we decided to find another apparatus that could hold our solar panel.</p>
             <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. 
@@ -110,6 +109,7 @@
                 to charge the battery while it powers the solar tracking circuit. This is <i>NOT</i> a trivial issue, as it requires calculations and careful hardware engineering 
                 to correctly implement everything. 
             </p>
+            <center><img src="https://c1.neweggimages.com/productimage/nb1280/ASDGD2311170FT2PH73.jpg" width="320" height="177"></center>
             <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. More importantly, this 
             unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
             </p>
@@ -122,7 +122,7 @@
         <h2>Energy Savings</h2>
             <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
             <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
-                impossible to compare energy savings based on voltage levels alone.
+                impossible to compare energy savings based on voltage levels alone, as the amount of energy inside the battery varies significantly even at the same voltage level.
             </p>
 
             <center><img src="imgs/discharge comparison.png" width="405" height="300"></center>
