@@ -19,15 +19,15 @@
         <style>
 
             .pTitle, .cInfo {
-                background-color: black;
-            }
-
-            .dateInfo {
                 background-color: rgb(0,113,227);
             }
 
+            .dateInfo {
+                background-color: darkgreen;
+            }
+
             h2 {
-                color: #006400;
+                color: lightgreen;
             }
             
         </style>
@@ -54,9 +54,7 @@
                 enough energy, though, as during testing, we discovered that in order to hold the solar panel in place, the vertical servo motor must constantly provide a large 
                 amount of current (sometimes up to 400 mA when the solar panel is low enough). This makes this apparatus far too inefficient for practical purposes.
             </p>
-            <p>The circuit contains four voltage dividers, allowing for the Arduino to gauge the voltage readings of each sensor.</p>
-            <center><img src="imgs/circuit1_vdivider.001.jpeg" width="480" height="240"></center>
-            <center><img src="imgs/block diagram.bmp" width="767" height="432"></center>
+            <center><img src="imgs/block diagram.jpg" width="767" height="432"></center>
             <p>Below is a demonstration of the solar tracker in action with a flashlight, which simulates the sun hitting the four photoresistors.</p>
             <center><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
         <h2>The Gimbal</h2>
@@ -109,7 +107,7 @@
             </div>
             <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
             <p>To summarize, there is a flowchart below that illustrates the interactions between the different components in the solar tracker.</p>
-            <center><img src="imgs/basic_diagram.jpg" width="763" height="576"></center>
+            <center><img src="imgs/basic_diagram.png" width="763" height="576"></center>
         <h2>Managing Power</h2>
             <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
                 to charge the battery while it powers the solar tracking circuit. By decreasing power consumption, we can maximize the increase in energy production that the 
@@ -125,21 +123,21 @@
                 Schmitt Trigger circuit, which uses hysteresis to prevent the solar tracker from turning on/off repeatedly when the light is just at the 
                 threshold. A diagram of the circuit can be seen below.
             </p>
-            <center><img src="imgs/schmitt trigger/schmitt trigger.001.jpeg" width="480" height="240"></center>
+            <center><img src="imgs/schmitt_trigger.png" width="600" height="450"></center>
         <h2>Energy Savings</h2>
             <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
             <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
                 impossible to compare energy savings based on voltage levels alone, as the amount of energy inside the battery varies significantly even at the same voltage level.
             </p>
 
-            <center><img src="imgs/discharge comparison.png" width="405" height="300"></center>
+            <center><img src="imgs/discharge_comparison.png" width="405" height="300"></center>
             <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
                 current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
                 tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
                 we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker. The test was performed 
                 over the course of several days from July 22-30.
             </p>
-            <center><img src="imgs/energy graph.png" width="561" height="293"></center>
+            <center><img src="imgs/energy_graph.png" width="561" height="293"></center>
             <button type="button" class="dataTable" id="tableViewer">View raw data</button>
             <div class="collapsible_content" style="width: 50%; margin: 0 auto;">
                 <table class="tg"><thead>
