@@ -8,7 +8,7 @@
 }
 
 h1 {
-    font-family: 'Wevli Regular', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
+    font-family: 'Wevli Regular', -apple-system, system-ui;
     font-weight: lighter;
     font-size: 72px;
     margin-left: 20px;
@@ -16,7 +16,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Wevli Regular', -apple-system, 'Segoe UI', Arial, system-ui, sans-serif;
+    font-family: 'Wevli Regular', -apple-system, system-ui;
     font-weight: normal;
     font-size: 36px;
     margin-left: 50px;
@@ -24,7 +24,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Wevli Regular',-apple-system, 'Segoe UI', Arial, system-ui, -apple-system, sans-serif;
+    font-family: -apple-system, system-ui;
     font-size: 28px;
     margin-left: 30px;
     font-weight: normal;
@@ -33,13 +33,17 @@ h3 {
 }
 
 p, ul, u, ol {
-    font-family: 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, system-ui;
     font-size: 16px;
     margin-left: 120px;
     margin-right: 120px;
     margin-top: 30px;
     margin-bottom: 30px;
     line-height: 1.5;
+}
+
+a {
+    color: cyan;
 }
 
 pre {
@@ -82,7 +86,7 @@ button {
     padding-bottom: 30px;
     color: white;
     font-size: 14px;
-    font-family: -apple-system, 'Segoe UI', system-ui, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, system-ui;
 }
 
 .collapsible, .dataTable {
@@ -116,4 +120,10 @@ button:hover {
 
 button:active {
     background-color: #006EDB;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }

@@ -43,7 +43,7 @@
             <p>The initial design for this project is based off of Aboubakr_Elhammoumi's solar tracker, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
                 However, there are key differences in the way that this project is designed, as we do not have access to 3-D printers or CNC machines.</p>
             <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
-            <center><img src="imgs/DSC03407.JPG" width="640" height="480"></center>
+            <div class="center"><img src="imgs/DSC03407.JPG" width="640" height="480"></div>
             <i><p style="text-align: center;">NOTE: The solar panel shown in this image is a much smaller 12V 300mA (3.6W) panel, which does not provide nearly as much energy as the 20W panel.</p></i>
             <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position.
                 However, very quickly into testing, we realized that the servo motors do not provide enough torque to lift the 20W solar panel that we bought, thus we ended up abandoning this design.
@@ -52,30 +52,32 @@
                 is unable to generate enough torque to move the solar panel and rotational apparatus (which has a torque of 3.4 kgf·cm). </p>
             <p>We then bought a much smaller solar panel that would operate at 12V 300mA, so that it could be mounted on this tracker apparatus. This does not produce 
                 enough energy, though, as during testing, we discovered that in order to hold the solar panel in place, the vertical servo motor must constantly provide a large 
-                amount of current (sometimes up to 400 mA when the solar panel is low enough). This makes this apparatus far too inefficient for practical purposes.
+                amount of current (sometimes up to 400 mA when the solar panel is low enough). This causes the solar tracker to <i>consume</i> more power than is being generated, which defeats the purpose of a solar tracker.
             </p>
-            <center><img src="imgs/block diagram.jpg" width="767" height="432"></center>
+            <div class="center"><img src="imgs/block diagram.jpg" width="767" height="432"></div>
             <p>Below is a demonstration of the solar tracker in action with a flashlight, which simulates the sun hitting the four photoresistors.</p>
-            <center><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <h2>The Gimbal</h2>
-            <p>Since our original apparatus was too inefficient for practical purposes, we decided to find another apparatus that could hold our solar panel.</p>
-            <p>We bought this gimbal off of Amazon, which contained two wormgear motors attached to a steel rotating apparatus. 
+            <p>Since our original apparatus was simply impractical, we decided to find another apparatus that could hold our solar panel.</p>
+            <p>We bought this gimbal off of Amazon, which contained two wormgear motors on top of a steel base. 
                 Four limit sensors are installed in each direction of rotation. This gimbal was perfect for our project, as it had a maximum load of 5 kg for 12V DC, which 
-                was enough to accomodate our 1.36 kg solar panel.
+                was more than enough to accomodate our 1.36 kg solar panel. The gimbal also included a locking mechanism to hold the panel in place, which eliminates the need 
+                to provide large amounts of current to do so.
             </p>
-            <center><img src="imgs/31QTzigjPeL._MCnd_AC_.jpg"></center>
+            <div class="center"><img src="imgs/31QTzigjPeL._MCnd_AC_.jpg"></div>
+            <p style="text-align: center;">Credit: <a href="https://www.amazon.com/Double-Two-Axis-Tracking-Monitoring-Torque/dp/B0FHWCN5SR">Amazon Shopping</a></p>
             <p>Furthermore, we changed the orientation of the photoresistors by rotating the sensors 45 degrees from their original positions, which allows the solar tracker to better detect the sun's position.</p>
-            <center><img src="imgs/ldr_positions.jpg" width="480" height="360"></center>
+            <div class="center"><img src="imgs/ldr_positions.jpg" width="480" height="360"></div>
             <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
                 most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
             </p>
             <p>Below is a circuit diagram that most nearly represents the circuit that we built, minus the comparators and potentiometers, which were substituted for the Arduino's analog/digital pins.</p>
-            <center><img src="imgs/BE5_Fig1-554x800.jpg"></center>
-            <center><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+            <div class="center"><img src="imgs/BE5_Fig1-554x800.jpg"></div>
+            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
             <p>On July 17th, my father and I positioned the solar tracker in an optimum location in our backyard, such that the photoresistors will receive uninterrupted sunlight for the duration of our 
                 video recording. From around 9:00 AM to 5:00 PM, we captured footage of the solar tracker using a camcorder, and then sped up the footage to create the timelapse you see above.</p>
-            <center><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></center>
+            <div class="center"><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></div>
             <p>As noted previously, instead of using potentiometers and comparators, the motors, limit sensors, and photoresistors are connected directly to the Arduino Uno, with the motors connected to digital pins 10/11/12/13, 
             the limit sensors to digital pins 6/7/8/9, and the photoresistors to analog pins A0/A1/A2/A3. I created a software program for the Uno in order to make this solar tracker work as intended.</p>
             <p>Essentially, the software can be broken down into two main parts: the initialization and the tracking. The initialization portion  
@@ -109,37 +111,37 @@
             </div>
             <p>The same concept applies for the left/right sensors with pins 12 and 13.</p>
             <p>To summarize, there is a flowchart below that illustrates the interactions between the different components in the solar tracker.</p>
-            <center><img src="imgs/basic_diagram.png" width="763" height="576"></center>
+            <div class="center"><img src="imgs/basic_diagram.png" width="763" height="576"></div>
         <h2>Managing Power</h2>
             <p>One of the most crucial issues concerning this project is power management, specifically reducing power consumption and implementing a way for the solar panel 
                 to charge the battery while it powers the solar tracking circuit. By decreasing power consumption, we can maximize the increase in energy production that the 
                 solar tracker provides.
             </p>
-            <center><img src="https://c1.neweggimages.com/productimage/nb1280/ASDGD2311170FT2PH73.jpg" width="320" height="177"></center>
+            <div class="center"><img src="https://c1.neweggimages.com/productimage/nb1280/ASDGD2311170FT2PH73.jpg" width="320" height="177"></div>
             <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. We set the 
-            voltage to 7.0 volts, which is the maximum voltage for transistor-transistor logic (TTL), which is necessary to drive the motors. More importantly, this 
-            unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it.
+            voltage to 7.0 volts, as it minimizes the amount of current we use to drive the circuits while still providing enough voltage to hold the solar panel in place. More importantly, this 
+            unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it. Although turning off the 
+            circuit does not completely eliminate current draw (as the power supply unit still draws &approx; 16 mA when off), it still saves a decent amount of energy compared to the &approx; 30 mA 
+            current draw when in the Arduino's native sleep mode.
             </p>
-            <center><img src="imgs/enable disable pin.png"></center>
+            <div class="center"><img src="imgs/enable disable pin.png"></div>
             <p>In order to trigger the enable/disable pin depending on ambient light, we used another light sensor installed inside a 
                 Schmitt Trigger circuit, which uses hysteresis to prevent the solar tracker from turning on/off repeatedly when the light is just at the 
                 threshold. A diagram of the circuit can be seen below.
             </p>
-            <center><img src="imgs/schmitt_trigger.png" width="600" height="450"></center>
+            <div class="center"><img src="imgs/schmitt_trigger.png" width="600" height="450"></div>
         <h2>Energy Savings</h2>
             <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
-            <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. As you can see below, it is 
+            <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. It is 
                 impossible to compare energy savings based on voltage levels alone, as the amount of energy inside the battery varies significantly even at the same voltage level.
             </p>
-
-            <center><img src="imgs/discharge_comparison.png" width="405" height="300"></center>
             <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
                 current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
                 tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
                 we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker. The test was performed 
                 over the course of several days from July 22-30.
             </p>
-            <center><img src="imgs/energy_graph.png" width="561" height="293"></center>
+            <div class="center"><img src="imgs/energy_graph.png" width="561" height="293"></div>
             <button type="button" class="dataTable" id="tableViewer">View raw data</button>
             <div class="collapsible_content" style="width: 50%; margin: 0 auto;">
                 <table class="tg"><thead>
@@ -330,7 +332,7 @@
                 a fixed position, optimal for the entire year.
             </p>
             <p>In addition, we can also factor in additional circumstances such as the tracker operating on only the vertical axis (essentially a single axis tracker, which is more cost-efficient). The solar panel, 
-               operating with only a single axis tracker, produced <strong>10.79</strong> Ah, which is very close to the dual axis tracker's energy production. 
+               operating with only a single axis tracker, produced <strong>10.79</strong> Ah, which is only <strong>2.5%</strong> less energy than dual axis tracker produced. 
             </p>
             <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's energy production. However, a single-axis tracker system is 
             usually more cost-efficient and practical while also increasing energy production by a similar factor as a dual-axis system.</p>
