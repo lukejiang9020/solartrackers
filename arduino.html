@@ -73,10 +73,10 @@
             </p>
             <p>Below is a circuit diagram that most nearly represents the circuit that we built, minus the comparators and potentiometers, which were substituted for the Arduino's analog/digital pins.</p>
             <div class="center"><img src="imgs/BE5_Fig1-554x800.jpg"></div>
-            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
             <p>On July 17th, my father and I positioned the solar tracker in an optimum location in our backyard, such that the photoresistors will receive uninterrupted sunlight for the duration of our 
                 video recording. From around 9:00 AM to 5:00 PM, we captured footage of the solar tracker using a camcorder, and then sped up the footage to create the timelapse you see above.</p>
+            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <p style="text-align: center;"><i>Sped up video recording of solar tracker from 9:00 AM to 5:00 PM</i></p>
             <div class="center"><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></div>
             <p>As noted previously, instead of using potentiometers and comparators, the motors, limit sensors, and photoresistors are connected directly to the Arduino Uno, with the motors connected to digital pins 10/11/12/13, 
             the limit sensors to digital pins 6/7/8/9, and the photoresistors to analog pins A0/A1/A2/A3. I created a software program for the Uno in order to make this solar tracker work as intended.</p>
@@ -132,26 +132,25 @@
             <div class="center"><img src="imgs/schmitt_trigger.png" width="600" height="450"></div>
         <h2>Energy Savings</h2>
             <p>How much energy will this solar tracker produce? After all, <i>increased energy production</i> is the SOLE REASON for building a solar tracker.</p>
-            <p>It is not simple to compare the efficiency of the two charging methods: charging while flat and while the solar tracker is operating. It is 
+            <p>It is not simple to compare the efficiency of the three potential charging methods: charging while flat, while a single axis tracker is operating, and when both axes are operational. It is 
                 impossible to compare energy savings based on voltage levels alone, as the amount of energy inside the battery varies significantly even at the same voltage level.
             </p>
             <p>Thus, we have decided to put a load on the solar panel (through the use of an inverter and a lamp drawing 1 A), so that if the solar panel does not provide enough 
                 current to run the circuit (bundled with the additional load), then the battery will provide the necessary current to run the circuit. The goal with the solar 
                 tracker is to minimize the amount of battery usage by placing the solar panel in a position such that it can provide its maximum current. By performing this test, 
-                we can directly compare the battery usage between the two charging methods in order to determine how much energy is saved by using the solar tracker. The test was performed 
+                we can directly compare the battery usage between the three charging methods in order to determine how much energy is saved by using the solar tracker. The test was performed 
                 over the course of several days from July 22-30.
             </p>
             <div class="center"><img src="imgs/energy_graph.png" width="561" height="293"></div>
             <button type="button" class="dataTable" id="tableViewer">View raw data</button>
-            <div class="collapsible_content" style="width: 50%; margin: 0 auto;">
-                <table class="tg"><thead>
+            <div class="collapsible_content">
+                <table class="center">
                     <tr>
                         <th class="tg-g0br">Time of Day</th>
-                        <th class="tg-g0br">Fixed at 29 Degrees</th>
+                        <th class="tg-g0br">Fixed at 29&deg;</th>
                         <th class="tg-g0br">Single Axis</th>
                         <th class="tg-g0br">Dual Axis</th>
-                    </tr></thead>
-                    <tbody>
+                    </tr>
                     <tr>
                         <td class="tg-c3ow">6:45 AM</td>
                         <td class="tg-c3ow">0.005</td>
@@ -320,19 +319,31 @@
                         <td class="tg-0pky"></td>
                         <td class="tg-0pky"></td>
                     </tr>
-                </tbody></table>
+                </table>
             </div>
             <p>The graph above illustrates the current (in A) produced by the solar panel, measured at 30 minute intervals. We used a power meter, which logs the voltage of the 
                 battery, along with the current draw. By subtracting the known load we placed (which consisted of a lamp and an inverter) by the current drawn shown on the 
-                power meter, we obtain the amount of current produced by the solar panel.
+                power meter, we obtain the amount of current produced by the solar panel with each charging method.
             </p>
+            <h3 style="font-size: 20px;">Total Current Production (in A) of Solar Panel from 6:45 AM to 6:15 PM</h2>
+            <table class="center">
+                <tr>
+                    <th>Fixed at 29&deg;</th>
+                    <th>Single Axis</th>
+                    <th>Dual Axis</th>
+                </tr>
+                <tr>
+                    <td>7.249</td>
+                    <td>10.793</td>
+                    <td>11.055</td>
+                </tr>
+            </table>
             <p>Using a midpoint Riemann sum to approximate the total energy produced by the solar panel in both conditions, we discover that the solar panel 
-                in the fixed position produced <strong>7.249</strong> Ah from 6:45 AM to 6:15 PM compared to <strong>11.06</strong> Ah when the solar tracker is 
-                enabled. This means that the solar tracker causes the solar panel to produce <strong>52.6%</strong> more energy compared to when it is mounted in 
-                a fixed position, optimal for the entire year.
+                in the fixed position produced <strong>52.6%</strong> more energy compared to when it is mounted in 
+                a fixed position at 29&deg;, optimal for the entire year.
             </p>
-            <p>In addition, we can also factor in additional circumstances such as the tracker operating on only the vertical axis (essentially a single axis tracker, which is more cost-efficient). The solar panel, 
-               operating with only a single axis tracker, produced <strong>10.79</strong> Ah, which is only <strong>2.5%</strong> less energy than dual axis tracker produced. 
+            <p>In addition, the single axis tracker produced only <strong>2.5%</strong> less energy than dual axis tracker produced, 
+                which is impressive considering that it only had one axis to operate on. 
             </p>
             <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's energy production. However, a single-axis tracker system is 
             usually more cost-efficient and practical while also increasing energy production by a similar factor as a dual-axis system.</p>

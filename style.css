@@ -1,10 +1,18 @@
 
 @font-face {
  font-family: 'Wevli Regular';
- src: url('wevli_regular.woff') format('woff');
+ src: url('fonts/wevli_regular.woff') format('woff');
  font-weight: normal;
  font-style: normal;
  font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto_Legacy_Med';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 h1 {
@@ -24,7 +32,7 @@ h2 {
 }
 
 h3 {
-    font-family: -apple-system, system-ui;
+    font-family: 'Roboto_Legacy_Med',-apple-system, system-ui;
     font-size: 28px;
     margin-left: 30px;
     font-weight: normal;
@@ -33,7 +41,7 @@ h3 {
 }
 
 p, ul, u, ol {
-    font-family: -apple-system, system-ui;
+    font-family: 'Roboto_Legacy_Med',-apple-system, system-ui;
     font-size: 16px;
     margin-left: 120px;
     margin-right: 120px;
@@ -99,6 +107,7 @@ button {
     font-size: 16px;
     text-align: center;
     border-radius: 0px;
+    margin-right: 10px;
 }
 
 .collapsible:hover, .dataTable:hover {
