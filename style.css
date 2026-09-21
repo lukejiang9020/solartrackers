@@ -8,9 +8,25 @@
 }
 
 @font-face {
-    font-family: 'Roboto_Legacy_Med';
-    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-family: 'Lato_Regular';
+    src: url('fonts/Lato-Regular.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato_Italic';
+    src: url('fonts/Lato-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato_Bold';
+    src: url('fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
@@ -19,7 +35,6 @@ h1 {
     font-family: 'Wevli Regular', -apple-system, system-ui;
     font-weight: lighter;
     font-size: 72px;
-    margin-left: 20px;
     text-align: center;
 }
 
@@ -27,26 +42,26 @@ h2 {
     font-family: 'Wevli Regular', -apple-system, system-ui;
     font-weight: normal;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: 3%;
     color: #a31f34;
 }
 
 h3 {
-    font-family: 'Roboto_Legacy_Med',-apple-system, system-ui;
+    font-family: 'Lato_Regular',-apple-system, system-ui;
     font-size: 28px;
-    margin-left: 30px;
+    margin-left: 3%;
     font-weight: normal;
     color: white;
     text-align: center;
 }
 
 p, ul, u, ol {
-    font-family: 'Roboto_Legacy_Med',-apple-system, system-ui;
+    font-family: 'Lato_Regular',-apple-system, system-ui;
     font-size: 16px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     line-height: 1.5;
 }
 
@@ -54,13 +69,23 @@ a {
     color: cyan;
 }
 
+strong {
+    font-family: 'Lato_Bold', -apple-system, system-ui;
+}
+
+i {
+    font-family: 'Lato_Italic', -apple-system, system-ui;
+}
+
 pre {
-    margin-left: -50px;
+    margin-left: -5%;
 }
 
 .pTitle, .cInfo {
     background-color: #a31f34;
     color: white;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
 }
 
 html, body {
@@ -74,8 +99,8 @@ td, th {
     border-collapse: separate;
     font-family: monospace;
     font-size: 16px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .diagrams {
