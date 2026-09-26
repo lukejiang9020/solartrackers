@@ -73,8 +73,8 @@
             <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
                 most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
             </p>
-            <p>Below is a circuit diagram that most nearly represents the circuit that we built, minus the comparators and potentiometers, which were substituted for the Arduino's analog/digital pins.</p>
-            <div class="center"><img src="imgs/BE5_Fig1-554x800.jpg" width=40% height=40%></div>
+            <p>Below is a circuit diagram that most nearly represents the circuit that we built.</p>
+            <div class="center"><img src="imgs/circuit_diagram.png" width=50% height=50%></div>
             <p>On July 17th, my father and I positioned the solar tracker in an optimum location in our backyard, such that the photoresistors will receive uninterrupted sunlight for the duration of our 
                 video recording. From around 9:00 AM to 5:00 PM, we captured footage of the solar tracker using a camcorder, and then sped up the footage to create the timelapse you see above.</p>
             <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/e67jPaiv7b0?si=j_AOykTGIjRBWCw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
@@ -327,19 +327,21 @@
                 battery, along with the current draw. By subtracting the known load we placed (which consisted of a lamp and an inverter) by the current drawn shown on the 
                 power meter, we obtain the amount of current produced by the solar panel with each charging method.
             </p>
-            <h3 style="font-size: 20px;">Total Current Production (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
-            <table class="center">
-                <tr>
-                    <th>Fixed at 29&deg;</th>
-                    <th>Single Axis</th>
-                    <th>Dual Axis</th>
-                </tr>
-                <tr>
-                    <td>7.249</td>
-                    <td>10.793</td>
-                    <td>11.055</td>
-                </tr>
-            </table>
+            <div style="background-color: navy; width: 80%; margin: auto; padding: 2%;">
+                <h3 style="font-size: 20px;">Total Current Production (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
+                <table class="center">
+                    <tr>
+                        <th>Fixed at 29&deg;</th>
+                        <th>Single Axis</th>
+                        <th>Dual Axis</th>
+                    </tr>
+                    <tr>
+                        <td>7.249</td>
+                        <td>10.793</td>
+                        <td>11.055</td>
+                    </tr>
+                </table>
+            </div>
             <p>Using a midpoint Riemann sum to approximate the total energy produced by the solar panel in both conditions, we discover that the solar panel 
                 in the fixed position produced <strong>52.6%</strong> more energy compared to when it is mounted in 
                 a fixed position at 29&deg;, optimal for the entire year.
@@ -357,9 +359,9 @@
             <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's energy production. However, a single-axis tracker system is 
             usually more cost-efficient and practical while also increasing energy production by a similar factor as a dual-axis system.</p>
         <div class="cInfo">
-            <br><p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
+            <p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
             <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Contact me!</p></a>
-            <a href="http://www.onlinewebfonts.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Web Fonts by Online WebFonts</p></a><br>
+            <a href="http://www.onlinewebfonts.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Web Fonts by Online WebFonts</p></a>
         </div>
     </body>
 
