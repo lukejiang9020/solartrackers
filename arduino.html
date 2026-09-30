@@ -31,6 +31,10 @@
             h2 {
                 color: lightgreen;
             }
+
+            img {
+                object-fit: contain;
+            }
             
         </style>
     </head>
@@ -325,7 +329,7 @@
             </div>
             <p>The graph above illustrates the current (in A) produced by the solar panel, measured at 30 minute intervals. We used a power meter, which logs the voltage of the 
                 battery, along with the current draw. By subtracting the known load we placed (which consisted of a lamp and an inverter) by the current drawn shown on the 
-                power meter, we obtain the amount of current produced by the solar panel with each charging method.
+                power meter, we obtain the amount of energy produced by the solar panel with each charging method.
             </p>
             <div style="background-color: navy; width: 80%; margin: auto; padding: 2%;">
                 <h3 style="font-size: 20px;">Total Current Production (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
@@ -343,21 +347,23 @@
                 </table>
             </div>
             <p>Using a midpoint Riemann sum to approximate the total energy produced by the solar panel in both conditions, we discover that the solar panel 
-                in the fixed position produced <strong>52.6%</strong> more energy compared to when it is mounted in 
+                in the fixed position produced <strong>52.6%</strong>* more energy compared to when it is mounted in 
                 a fixed position at 29&deg;, optimal for the entire year.
             </p>
-            <p>In addition, the single axis tracker produced only <strong>2.5%</strong> less energy than dual axis tracker produced, 
+            <p>In addition, the single axis tracker produced only <strong>2.5%</strong>* less energy than dual axis tracker produced, 
                 which is impressive considering that it only had one axis to operate on. 
             </p>
-            <p>However, the results of the test contain limitations. Because the test was conducted during the summer, the difference between 
-                the fixed panel and single-axis tracker is significantly exaggerated, due to the single-axis tracker not being longitudinally tilted at all, 
+            <div class="limitations" style="background-color: darkred; width: 80%; margin: auto; padding: 2%;">
+                <h3 style="font-size: 20px; font-family: 'Lato_Bold'; text-align: left;"> &#9888; LIMITATIONS OF THIS EXPERIMENT</h3>
+                <p>Because the test was conducted during the summer, the difference between the fixed panel and single-axis tracker is significantly exaggerated, due to the single-axis tracker not being longitudinally tilted at all, 
                 whereas the fixed panel was rotated 29&deg; longitudinally, which is nearly the optimal position for capturing sunlight for all seasons in a year. 
                 During the summer, the sun is more longitudinally centered, causing the single axis tracker to produce over 50% more energy compared to the 
                 fixed panel. This also explains why the difference between the single and dual axis tracker is miniscule: <strong>there was little need for adjustments in the longitudinal direction</strong>, 
                 which means that in the winter, when the sun is further to the South, the differences between the two trackers will be significantly more pronounced.
             </p>
+            </div>
             <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's energy production. However, a single-axis tracker system is 
-            usually more cost-efficient and practical while also increasing energy production by a similar factor as a dual-axis system.</p>
+            usually more cost-efficient and practical while also increasing energy production by a comparable factor as a dual-axis system.</p>
         <div class="cInfo">
             <p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
             <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Contact me!</p></a>
