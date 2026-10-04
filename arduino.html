@@ -45,38 +45,52 @@
         <div class="dateInfo">
             <h3>By Luke Jiang</h3>
         </div>
-        <h2>The Initial Project Design</h2>
-            <p>The initial design for this project was inspired by a pre-existing solar tracker design, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>. 
-                However, there are key differences in the way that this project is designed, as we do not have access to 3-D printers or CNC machines.</p>
-            <p>Below, you can see the apparatus that my father and I made for this solar tracker.</p>
-            <div class="center"><img src="imgs/DSC03407.JPG" width=50% height=50%></div>
-            <p style="text-align: center; font-family: 'Lato_Italic';">NOTE: The solar panel shown in this image is a much smaller 12V 300mA (3.6W) panel, which does not provide nearly as much energy as the 20W panel.</p>
-            <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position.
-                However, very quickly into testing, we realized that the servo motors do not provide enough torque to lift the 20W solar panel that we bought.
+        <h2>Introduction</h2>
+            <p>I am an incoming senior student at Glendora High School. I am interested in an electrical engineering career, and over the summer, I was looking for 
+                a project in order to enhance my interest and understanding of electrical engineering. In my efforts to find a suitable project, I 
+                discovered that building a solar tracker was the most common project pertaining to that field. Therefore, I chose this as my summer 
+                project due to the availability of the necessary components.
             </p>
-            <p>More specifically, the 20W solar panel weighed <strong>1.36</strong> kg, meaning that when it is attached to the rotating arm, the SG90 (which has a maximum stall torque of 1.8 kgf·cm) 
-                is unable to generate enough torque to move the solar panel and rotational apparatus (which has a torque of 3.4 kgf·cm). </p>
-            <p>We then bought a much smaller solar panel that would operate at 12V 300mA, so that it could be mounted on this tracker apparatus. This panel, however, does not produce 
-                enough energy to be practical, as during testing, we discovered that in order to hold the solar panel in place, the vertical servo motor must constantly provide a large 
-                amount of current (sometimes up to 400 mA when the solar panel is low enough). This causes the solar tracker to consume <i>more</i> power than is being generated, which defeats the purpose of building a solar tracker.
+            <p> My goal was not just to make a demo, but to make a practical and efficient design to charge and power devices such as a desk lamp. A 12V/20W solar panel is sufficient for this purpose.
+                My initial design was based on a pre-existing solar tracker design, which can be found <a href="https://projecthub.arduino.cc/Aboubakr_Elhammoumi/arduino-solar-tracker-77347b">here</a>.
+                I purchased the necessary components, including the Arduino, breadboards, and made the mechanical components out of wooden planks with the help from my father. 
+                Below, you can see a rendering of the apparatus that I made for this solar tracker, along with the circuit diagram.</p>
+                <iframe
+                    src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/Original_Tracker.dwg"
+                    style="width:100%;height:600px;border:0"
+                    allowfullscreen>
+                    </iframe>
+            <!-- <div class="center"><img src="imgs/original_tracker.png" width=40% height=40%></div><br><br><br> -->
+            <div class="center"><img src="imgs/block_diagram.jpg" width=50% height=50%></div>
+            <p>As you can see, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position. One minor difference between my design and the pre-existing one was that I rotated the photoresistors by 45&deg;. This allows the 
+                logistics of the solar tracker to be simplified, as there is no longer a need to take the average of two sensor readings in each direction to determine 
+                which direction to move the solar tracker.
             </p>
-            <div class="center"><img src="imgs/block diagram.jpg" width=50% height=50%></div>
-            <p>Below is a demonstration of the solar tracker in action with a flashlight, which simulates the sun hitting the four photoresistors.</p>
-            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <h2>Refining the Design</h2>
-            <p>Since our original apparatus was simply impractical, we decided to find another apparatus that could hold our solar panel.</p>
-            <p>We bought this gimbal off of Amazon, which contained two wormgear motors on top of a steel base. 
-                Four limit sensors are installed in each direction of rotation. This gimbal was perfect for our project, as it had a maximum load of 5 kg for 12V DC, which 
-                was more than enough to accomodate our 1.36 kg solar panel. The gimbal also included a locking mechanism to hold the panel in place, which eliminates the need 
-                to provide large amounts of current to do so. We screwed the gimbal onto a wooden base. Then, the solar panel was adhered to the 
-                gimbal through velcro patches. The four photoresistors are installed at the top of the solar panel. A CAD rendering of our setup can be seen below.
-            </p>
-            <div class="center"><img src="imgs/gimbal_crossview.png" width="40%" height="40%"><img src="imgs/gimbal_isometric.png" width="40%" height="40%"></div>
-            <p>Furthermore, we changed the orientation of the photoresistors by rotating the sensors 45 degrees from their original positions, which allows the solar tracker to better detect the sun's position.</p>
             <div class="center"><img src="imgs/ldr_positions.jpg" width=45% height=45%></div>
-            <p>There are three main components of this solar tracker system: the voltage regulator, microcontroller, and the motors themselves. The Arduino's microcontroller performs
-                most of the work, controlling when and how the two wormgear motors move based on the readings of the four photoresistors. 
+            <p>However, very quickly into testing, we realized that the vertical SG90 servo motor, with a maximum stall torque of 1.8 kgf·cm, 
+                is unable to generate enough torque to lift the 20W solar panel and the rotational apparatus. Eventually, we settled for a much smaller solar panel that is rated for 12V/3.6W in order for this tracker to work.
+                Below is a demonstration of the solar tracker in action with a flashlight, which simulates the sun hitting the four photoresistors.</p>
+            <div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/vnlxxcW9XgQ?si=51isCNnFtKqsjm3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <p>
+                Although this tracker works as a demo, it is impractical because during testing, we discovered that in order to hold the 
+                solar panel at a steep angle, the vertical servo motor constantly requires current up to 400mA, which is higher than 
+                the maximum current the solar panel can produce (300 mA). As a result, the solar tracker consumes <i>more</i> power than the power generated by the panel, which defeats the purpose of a solar tracker.
             </p>
+        <h2>Refining the Design</h2>
+            <p>Since our original design was impractical because of the nature of the servo motors, we looked at other types of motors with locking mechanisms to eliminate power consumption while 
+                the panel is in a static position.
+            </p>
+            <p>In the end, we came across a gimbal from Amazon, which contained two wormgear motors installed on top of a steel base, and four limit sensors are installed in each direction of rotation. This gimbal was perfect for our project, as during 
+                initial testing, we discovered that it was more than capable of holding our 20W panel at 7V. The gimbal also included a locking mechanism to hold the panel in place, which eliminates the need 
+                to provide large amounts of current to do so. For our design, we screwed the gimbal onto a wooden base. Then, the solar panel was adhered to the 
+                gimbal with velcro patches. Finally, the photoresistors were installed on top of the solar panel. A CAD rendering of our setup can be seen below.
+            </p>
+            <iframe
+            src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/Original_Tracker.dwg"
+            style="width:100%;height:600px;border:0"
+            allowfullscreen>
+            </iframe>
+            <!-- <div class="center"><img src="imgs/gimbal_crossview.png" width="40%" height="40%"><img src="imgs/gimbal_isometric.png" width="40%" height="40%"></div> -->
             <p>Below is a circuit diagram that most nearly represents the circuit that we built.</p>
             <div class="center"><img src="imgs/circuit_diagram.png" width=50% height=50%></div>
             <p>On July 17th, my father and I positioned the solar tracker in an optimum location in our backyard, such that the photoresistors will receive uninterrupted sunlight for the duration of our 
@@ -127,7 +141,7 @@
             <p>We bought a power supply unit, which allowed us to control the voltage outputted to the solar tracking circuit using a potentiometer. We set the 
             voltage to 7.0 volts, as it minimizes the amount of current we use to drive the circuits while still providing enough voltage to hold the solar panel in place. More importantly, this 
             unit contains an enable/disable pin on the LM2596 chip as shown below, which allows us to turn on/off the circuit when a LOW signal is sent to it. Although turning off the 
-            circuit does not completely eliminate current draw (as the power supply unit still draws &approx; 16 mA when off), it still saves a decent amount of energy compared to the &approx; 30 mA 
+            circuit does not completely eliminate current draw (as the power supply unit still draws &approx; 16 mA when the disable pin is triggered), it still saves a decent amount of energy compared to the &approx; 30 mA 
             current draw when in the Arduino's native sleep mode.
             </p>
             <div class="center"><img src="imgs/enable disable pin.png"></div>
@@ -153,7 +167,7 @@
                 <table class="center">
                     <tr>
                         <th class="tg-g0br">Time of Day</th>
-                        <th class="tg-g0br">Fixed at 29&deg;</th>
+                        <th class="tg-g0br">Fixed at 34&deg;</th>
                         <th class="tg-g0br">Single Axis</th>
                         <th class="tg-g0br">Dual Axis</th>
                     </tr>
@@ -335,7 +349,7 @@
                 <h3 style="font-size: 20px;">Total Current Production (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
                 <table class="center">
                     <tr>
-                        <th>Fixed at 29&deg;</th>
+                        <th>Fixed at 34&deg;</th>
                         <th>Single Axis</th>
                         <th>Dual Axis</th>
                     </tr>
@@ -348,7 +362,7 @@
             </div>
             <p>Using a midpoint Riemann sum to approximate the total energy produced by the solar panel in both conditions, we discover that the solar panel 
                 in the fixed position produced <strong>52.6%</strong>* more energy compared to when it is mounted in 
-                a fixed position at 29&deg;, optimal for the entire year.
+                a fixed position at 34&deg;, optimal for the entire year.
             </p>
             <p>In addition, the single axis tracker produced only <strong>2.5%</strong>* less energy than dual axis tracker produced, 
                 which is impressive considering that it only had one axis to operate on. 
@@ -356,7 +370,7 @@
             <div class="limitations" style="background-color: darkred; width: 80%; margin: auto; padding: 2%;">
                 <h3 style="font-size: 20px; font-family: 'Lato_Bold'; text-align: left;"> &#9888; LIMITATIONS OF THIS EXPERIMENT</h3>
                 <p>Because the test was conducted during the summer, the difference between the fixed panel and single-axis tracker is significantly exaggerated, due to the single-axis tracker not being longitudinally tilted at all, 
-                whereas the fixed panel was rotated 29&deg; longitudinally, which is nearly the optimal position for capturing sunlight for all seasons in a year. 
+                whereas the fixed panel was rotated 34&deg; longitudinally, which is nearly the optimal position for capturing sunlight for all seasons in a year. 
                 During the summer, the sun is closer to the apex, causing the single axis tracker to produce over 50% more energy compared to the 
                 fixed panel. This also explains why the difference between the single and dual axis tracker is miniscule: <strong>there was little need for adjustments in the longitudinal direction</strong>, 
                 which means that in the winter, when the sun is further to the South, the differences between the two trackers will be significantly more pronounced.
