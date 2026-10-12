@@ -22,7 +22,7 @@ constexpr int threshold_reset = 76.3;
 
 void setup() {
   // put your setup code here, to run once:
-  delay(10000);
+  delay(2000);
   Serial.begin(9600);
   Serial.println("BEGIN");
   pinMode(10, OUTPUT); // horizontal - move right
