@@ -19,7 +19,8 @@
         <style>
 
             .pTitle, .cInfo {
-                background-color: rgb(0,113,227);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/title_image.jpg');
+                background-position: center;
             }
 
             .dateInfo {
@@ -49,6 +50,7 @@
         <div class="dateInfo">
             <h3>By Luke Jiang</h3>
         </div>
+        <p>Page last updated: October 15<sup>th</sup>, 2026</p>
         <h2>Introduction</h2>
             <p>I am currently a senior student at Glendora High School. I am interested in an electrical engineering career, and over the summer, I was looking for 
                 a project in order to enhance my interest and understanding of electrical engineering. In my efforts to find a suitable project, I 
@@ -170,7 +172,7 @@
                 of the summer, where the sun is almost at the apex of the sky. 
             </p>
             <div class="center"><img src="imgs/energy_graph.png" width=60% height=60%></div>
-            <div style="background-color: navy; width: 80%; margin: auto; padding: 2%;">
+            <div style="background-color: black; width: 80%; margin: auto; padding: 2%;">
                 <h3 style="font-size: 20px;">Total Current Generation (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
                 <table class="center">
                     <tr>
@@ -372,9 +374,8 @@
             <p>Overall, the best conclusion to draw from this data is that the dual-axis solar tracking system is the best for increasing a solar panel's current generation. However, a single-axis tracker system is 
             usually more cost-efficient and practical while also noticeably increasing current generation.</p>
         <div class="cInfo">
-            <p style="text-align: center; font-family: 'Wevli Regular', system-ui;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
-            <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Contact me!</p></a>
-            <a href="http://www.onlinewebfonts.com" style="text-align: center; color: white;"><p style="font-family: 'Wevli Regular', system-ui;">Web Fonts by Online WebFonts</p></a>
+            <p style="text-align: center;">Copyright &copy; 2026 Luke Jiang. All Rights Reserved.</p>
+            <a href="mailto:ljiang9020@gmail.com" style="text-align: center; color: white;"><p>&#9993; Contact me!</p></a>
         </div>
     </body>
 
@@ -403,8 +404,8 @@
         var btnId = document.getElementById("expandable");
         var btn2Id = document.getElementById("tableViewer");
 
-        expandContent(coll, btnId, "View code sample", "Collapse code sample", "rgb(0, 113, 227)", "red");
-        expandContent(coll2, btn2Id, "View raw data", "Collapse raw data", "rgb(0, 113, 227)", "red");
+        expandContent(coll, btnId, "View code sample", "Collapse code sample", "teal", "red");
+        expandContent(coll2, btn2Id, "View raw data", "Collapse raw data", "teal", "red");
 
     </script>
 </html>
