@@ -17,7 +17,7 @@ int limitUD = 0;
 int limitLR = 0;
 int isNight = 0;
 
-constexpr int threshold_value = 100;
+constexpr int threshold_value = 50;
 constexpr int threshold_reset = 76.3;
 
 void setup() {

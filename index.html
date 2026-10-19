@@ -2,15 +2,6 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLE65FKYJC"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-LLE65FKYJC');
-        </script>
 
         <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7991396e29bc4b38af1fd4be6e6cdf4a"}'></script><!-- End Cloudflare Web Analytics -->
 
@@ -98,11 +89,13 @@
                 are directly connected to the Arduino to prevent the motors from overrotating and to identify the angles of the tracker during the initialization stage right after being powered up. The switching 
                 voltage regulator was used to efficiently drop the 13V LFP battery to 7V.
             </p>
-            <iframe
-            src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1"
-            style="width:100%;height:600px;border:0"
-            allowfullscreen>
-            </iframe>
+            <div class="cadviewer" style="width: 80%; margin: auto;">
+                <iframe
+                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1"
+                style="width:100%;height:600px;border:0"
+                allowfullscreen>
+                </iframe>
+            </div>
             <p style="text-align: center;"><i>Figure 5: The circuit diagram for our newly designed solar tracker</i></p>
             <div class="center"><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></div>
             <p>A software program was created for the Arduino Uno to make the solar tracker work as intended. The software can be broken down into two parts: initialization and tracking. Before initialization, 
