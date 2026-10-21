@@ -17,7 +17,7 @@ int limitUD = 0;
 int limitLR = 0;
 int isNight = 0;
 
-constexpr int threshold_value = 50;
+constexpr int threshold_value = 25;
 
 void setup() {
   // put your setup code here, to run once:
@@ -64,8 +64,7 @@ void initialize() {
 
   Serial.print("Pin 8 reading: ");
   Serial.println(digitalRead(8));
-  unsigned long startTime = millis();
-  while (millis() - startTime < 5000) {
+  while (digitalRead(8) == LOW) {
     Serial.println("Reversing motor direction...");
     digitalWrite(11, LOW);
     digitalWrite(10, HIGH);
