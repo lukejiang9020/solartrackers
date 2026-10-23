@@ -55,7 +55,14 @@
                 Below, you can see a rendering of the apparatus that I made for this solar tracker, along with the circuit diagram.</p>
             <div class="center"><img src="imgs/original_tracker.png" width=65% height=65%></div>
             <p style="text-align: center;"><i>Figure 1: A CAD rendering of the design for the original tracker</i></p>
-            <div class="center"><img src="imgs/block_diagram.jpg" width=70% height=70%></div>
+            <div class="cadviewer" style="width: 80%; margin: auto;">
+                <iframe
+                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1"
+                style="width:100%;height:600px;border:0"
+                allowfullscreen>
+                </iframe>
+            </div>
+            <a href="imgs/Solar_Tracker_Circuit_Diagram_Rev1.pdf"><p style="text-align: center;">Not loading? Use this link to view the circuit diagram.</p></a>
             <p style="text-align: center;"><i>Figure 2: The circuit diagram for the original tracker</i></p>
             <p>As illustrated in Figure 1, there are wooden planks supporting the solar tracker, which allow the tracker to rotate freely up to 180 degrees to track the sun's position. Four photoresistors 
                 are needed to cover all directions of sunlight.
@@ -91,12 +98,12 @@
             </p>
             <div class="cadviewer" style="width: 80%; margin: auto;">
                 <iframe
-                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1"
+                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/New_Tracker_Circuit.dwg&mode=review&toolbar=1"
                 style="width:100%;height:600px;border:0"
                 allowfullscreen>
                 </iframe>
             </div>
-            <a href="imgs/Original_Tracker_Circuit.pdf"><p style="text-align: center;">Not loading? Use this link to view the circuit diagram.</p></a>
+            <a href="imgs/Solar_Tracker_Circuit_Diagram_Rev2.pdf"><p style="text-align: center;">Not loading? Use this link to view the circuit diagram.</p></a>
             <p style="text-align: center;"><i>Figure 5: The circuit diagram for our newly designed solar tracker</i></p>
             <div class="center"><a href="gimbal/gimbal.ino"><button>Download the code for this tracker</button></a></div>
             <p>A software program was created for the Arduino Uno to make the solar tracker work as intended. The software can be broken down into two parts: initialization and tracking. Before initialization, 
