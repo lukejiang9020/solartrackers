@@ -1,10 +1,11 @@
+@font-face {
+    font-family: 'Roboto_Regular';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
 
 @font-face {
- font-family: 'Wevli Regular';
- src: url('fonts/wevli_regular.woff') format('woff');
- font-weight: normal;
- font-style: normal;
- font-display: swap;
+    font-family: 'Roboto_Lt';
+    src: url('fonts/Roboto-Light.ttf') format('truetype');
 }
 
 @font-face {
@@ -37,14 +38,14 @@
 }
 
 h1 {
-    font-family: 'Lato_Lt', -apple-system, system-ui;
+    font-family: 'Roboto_Lt', -apple-system, system-ui;
     font-weight: normal;
     font-size: 72px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Lato_Bold', -apple-system, system-ui;
+    font-family: 'Roboto_Lt', -apple-system, system-ui;
     font-weight: normal;
     font-size: 36px;
     margin-left: 3%;
@@ -69,10 +70,6 @@ p, ul, u, ol {
     line-height: 1.5;
 }
 
-a {
-    color: cyan;
-}
-
 strong {
     font-family: 'Lato_Bold', -apple-system, system-ui;
 }
@@ -94,8 +91,6 @@ pre {
 html, body {
     margin: 0px;
     padding: 0px;
-    background-color: black;
-    color: white;
 }
 
 td, th {
@@ -112,17 +107,17 @@ td, th {
 }
 
 button {
-    background-color: teal;
-    box-shadow: none;
-    border: 1px solid black;
-    border-radius: 20px;
+    background-color: rgb(19, 19, 221);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border: 0px;
+    border-radius: 6px;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 30px;
     padding-bottom: 30px;
     color: white;
     font-size: 14px;
-    font-family: -apple-system, system-ui;
+    font-family: 'Roboto_Regular';
 }
 
 .collapsible, .dataTable {
@@ -134,7 +129,7 @@ button {
     font-size: 16px;
     text-align: center;
     border-radius: 0px;
-    border: 1px solid black;
+    border: 0px;
     margin-right: 10px;
 }
 
@@ -145,13 +140,13 @@ button {
 .collapsible_content {
     display: none;
     overflow: hidden;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(197, 195, 195);
 }
 
 button:hover {
-    background-color: darkslategray;
+    background-color: darkblue;
     color: white;
-    border-radius: 20px;
+    border-radius: 6px;
     cursor: pointer;
 }
 

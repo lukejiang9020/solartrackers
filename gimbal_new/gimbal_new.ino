@@ -1,12 +1,11 @@
 // Gimbal Solar Tracker - by Luke Jiang
 // Copyright (C) 2026 Luke Jiang. All Rights Reserved.
-// modified 10-12-26
+// final version
 
-constexpr int ldrtop = 1;
-constexpr int ldrbottom = 2;
-constexpr int ldrleft = 3;
-constexpr int ldrright = 0;
-constexpr int ldrNight = 4;
+constexpr int ldrA = 1; // ldrtop
+constexpr int ldrB = 2; // ldrbottom
+constexpr int ldrC = 3; // ldrleft
+constexpr int ldrD = 0; // ldrright
 
 int top = 0;
 int bottom = 0;
@@ -15,14 +14,12 @@ int right = 0;
 int night = 0;
 int limitUD = 0;
 int limitLR = 0;
-int isNight = 0;
 
-constexpr int threshold_value = 50;
-constexpr int threshold_reset = 76.3;
+constexpr int threshold_value = 25;
 
 void setup() {
   // put your setup code here, to run once:
-  delay(10000);
+  delay(2000);
   Serial.begin(9600);
   Serial.println("BEGIN");
   pinMode(10, OUTPUT); // horizontal - move right
@@ -46,6 +43,26 @@ void stopHorizontal() {
   digitalWrite(13, LOW);
 }
 
+void moveUp() {
+  digitalWrite(11, HIGH);
+  digitalWrite(10, LOW);
+}
+
+void moveDown() {
+  digitalWrite(11, LOW);
+  digitalWrite(10, HIGH);
+}
+
+void moveCCW() {
+  digitalWrite(12, LOW);
+  digitalWrite(13, HIGH);
+}
+
+void moveCW() {
+  digitalWrite(12, HIGH);
+  digitalWrite(13, LOW);
+}
+
 void loop() {
   // put your main code here, to run repeatedly:
   wormgear();
@@ -54,9 +71,8 @@ void loop() {
 void initialize() {
   Serial.println("Initialization begin!");
   stopHorizontal();
-  while (digitalRead(8) == HIGH) {
-    digitalWrite(11, HIGH);
-    digitalWrite(10, LOW);
+  while (digitalRead(8) == HIGH) { // while limit sensor has NOT been reached
+    moveUp();
   }
   Serial.println("Limit sensor has been reached!");
 
@@ -65,48 +81,60 @@ void initialize() {
 
   Serial.print("Pin 8 reading: ");
   Serial.println(digitalRead(8));
-  unsigned long startTime = millis();
-  while (millis() - startTime < 2000) {
+  while (digitalRead(8) == LOW) { // while limit sensor is triggered
     Serial.println("Reversing motor direction...");
-    digitalWrite(11, LOW);
-    digitalWrite(10, HIGH);
+    moveDown();
   }
-  stopVertical();
-  while (digitalRead(13) == HIGH) {
-    digitalWrite(12, LOW);
-    digitalWrite(13, HIGH);
-    Serial.println("Pin 13 is high...");
-  }
-  unsigned long start = millis();
-  while (millis() - start < 2000) {
-    Serial.println("The motor is reversing direction...");
-    digitalWrite(12, HIGH);
-    digitalWrite(13, LOW);
+  stopVertical(); // stop vertical motor
+  while (digitalRead(7) == HIGH) {
+    moveCCW();
   }
   stopHorizontal();
+  unsigned long start = millis();
+  while (millis() - start < 15000) {
+    moveCW();
+  }
+  stopHorizontal();
+  // top = analogRead(ldrA); // right
+  // bottom = analogRead(ldrB); // left
+  // left = analogRead(ldrC); // bottom
+  // right = analogRead(ldrD); // top
+  top = analogRead(ldrD);
+  bottom = analogRead(ldrC);
+  left = analogRead(ldrB);
+  right = analogRead(ldrA);
+  delay(2000);
+  if (bottom - top >= 100) {
+    
+    Serial.println("Threshold met!");
+    unsigned long start1 = millis();
+    while (millis() - start1 < 16000) {
+      Serial.println("Moving clockwise!");
+      moveCW();
+    }
+    stopHorizontal();
+  }
+  unsigned long start2 = millis();
+  while (millis() - start2 < 5000) {
+    Serial.println("Moving down...");
+    moveDown();
+  }
+  stopVertical();
   Serial.println("Initialization STOP!");
-  delay(5000);
+  delay(2000);
   Serial.println("GO!");
 }
 
 void wormgear() {
-  top = analogRead(ldrtop);
-  bottom = analogRead(ldrbottom);
-  left = analogRead(ldrleft);
-  right = analogRead(ldrright);
-  night = analogRead(ldrNight);
 
-  Serial.print("Top: ");
-  Serial.println(top*5.0/1023);
-  Serial.print("Bottom: ");
-  Serial.println(bottom*5.0/1023);
-  Serial.print("Left: ");
-  Serial.println(left*5.0/1023);
-  Serial.print("Right: ");
-  Serial.println(right*5.0/1023);
-  // delay(4000);
-  // Serial.print("Pin 9 reading: ");
-  // Serial.println(digitalRead(8));
+  // top = analogRead(ldrA); // right
+  // bottom = analogRead(ldrB); // left
+  // left = analogRead(ldrC); // bottom
+  // right = analogRead(ldrD); // top
+  top = analogRead(ldrD);
+  bottom = analogRead(ldrC);
+  left = analogRead(ldrB);
+  right = analogRead(ldrA);
 
   
   int diffelev = top - bottom;
@@ -114,41 +142,32 @@ void wormgear() {
 
 
   // normal operating conditions
-  if (diffazi >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated
+  if (diffelev >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated
     // moves solar panel up
-    digitalWrite(10, HIGH);
-    digitalWrite(11, LOW);
-  } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(9) == HIGH) {
+    moveUp();
+  } else if (abs(diffelev) >= threshold_value && diffelev < 0 && digitalRead(9) == HIGH) {
     // moves solar panel down
-    digitalWrite(10, LOW);
-    digitalWrite(11, HIGH);
+    moveDown();
   } else {
     stopVertical(); // sends LOW signal to both pins 10 and 11
   }
 
 
 
-  if (diffelev >= threshold_value) {
-    // digitalWrite(10, LOW);
-    // digitalWrite(11, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(13, LOW);
-  } else if (abs(diffelev) >= threshold_value && diffelev < 0 && digitalRead(6) == HIGH) {
-    // digitalWrite(10, LOW);
-    // digitalWrite(11, LOW);
-    digitalWrite(12, LOW);
-    digitalWrite(13, HIGH);
+  if (diffazi >= threshold_value && digitalRead(7) == HIGH) {
+    moveCW();
+  } else if (abs(diffazi) >= threshold_value && diffazi < 0 && digitalRead(6) == HIGH) {
+    moveCCW();
   } else {
     stopHorizontal();
   }
 
-  if (digitalRead(13) == LOW) {
+  if (digitalRead(7) == LOW) {
     unsigned long start_time = millis();
-    while (digitalRead(13) == LOW) {
+    while (digitalRead(7) == LOW) {
       Serial.println("Reversing motor direction...");
       while (millis() - start_time < 4000) {
-        digitalWrite(12, HIGH);
-        digitalWrite(13, LOW);
+        moveCW();
       }
         Serial.println("Motor STOP!");
         stopHorizontal();
@@ -161,8 +180,7 @@ void wormgear() {
     while (digitalRead(6) == LOW) {
       Serial.println("Reversing motor direction...");
       while (millis() - starting < 4000) {
-        digitalWrite(12, LOW);
-        digitalWrite(13, HIGH);
+        moveCCW();
       }
         Serial.println("Motor STOP!");
         stopHorizontal();
@@ -170,28 +188,25 @@ void wormgear() {
     }
   }
   
-  while (digitalRead(8) == LOW && !isNight) {
+  while (digitalRead(8) == LOW) {
     Serial.println("Limit sensor reached!");
-    digitalWrite(10, HIGH);
-    digitalWrite(11, LOW);
+    moveDown();
     if (digitalRead(8) == HIGH) {
       Serial.println("Motor STOP!");
       stopVertical();
       delay(100);
       unsigned long timeBegin = millis();
       while (millis() - timeBegin < 17000) {
-        digitalWrite(12, HIGH);
-        digitalWrite(13, LOW);
+        moveCW();
       }
       stopHorizontal();
       delay(10000);
     }
   }
 
-  while (digitalRead(9) == LOW && !isNight) {
+  while (digitalRead(9) == LOW) {
     Serial.println("Limit sensor reached!");
-    digitalWrite(10, LOW);
-    digitalWrite(11, HIGH);
+    moveUp();
     if (digitalRead(9) == HIGH) {
       Serial.println("Motor STOP!");
       stopVertical();

@@ -11,18 +11,18 @@
         <style>
 
             .pTitle, .cInfo {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/title_image.jpg');
+                background-image: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('imgs/title_image.jpg');
                 background-position: center;
             }
 
             .dateInfo {
-                background-color: darkgreen;
-                padding-top: 1.5%;
-                padding-bottom: 1.5%;
+                background-color: rgb(19, 19, 221);
+                padding-top: 0.05%;
+                padding-bottom: 0.05%;
             }
 
             h2 {
-                color: lightgreen;
+                color: rgb(19, 19, 221);
             }
 
             img {
@@ -33,6 +33,24 @@
                 text-align: center;
             }
             
+            .lbl1, .lbl2, .lbl3 {
+                font-family: 'Roboto_Lt';
+                font-size: 32px;
+                font-weight: normal;
+                padding-bottom: 5%;
+            }
+
+            .lbl1, .data1 {
+                color: rgb(192, 83, 83);
+            }
+
+            .lbl2, .data2 {
+                color:rgb(19, 19, 221);
+            }
+
+            .lbl3, .data3 {
+                color: rgb(56, 150, 56);
+            }
         </style>
     </head>
     <body>
@@ -40,9 +58,9 @@
             <h1>Building a Solar Tracker</h1>
         </div>
         <div class="dateInfo">
-            <h3>By Luke Jiang</h3>
+            <p style="text-align: center; color: white; font-size: 20px; margin: 1%;">By Luke Jiang</p>
         </div>
-        <p>Page last updated: October 15<sup>th</sup>, 2026</p>
+        <p>Page last updated: October 24<sup>th</sup>, 2026</p>
         <h2>Introduction</h2>
             <p>I am currently a senior student at Glendora High School. I am interested in an electrical engineering career, and over the summer, I was looking for 
                 a project in order to enhance my interest and understanding of electrical engineering. In my efforts to find a suitable project, I 
@@ -57,7 +75,7 @@
             <p style="text-align: center;"><i>Figure 1: A CAD rendering of the design for the original tracker</i></p>
             <div class="cadviewer" style="width: 80%; margin: auto;">
                 <iframe
-                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1"
+                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/Original_Tracker_Circuit.dwg&mode=review&toolbar=1&theme=light"
                 style="width:100%;height:600px;border:0"
                 allowfullscreen>
                 </iframe>
@@ -90,7 +108,7 @@
             <p style="text-align: center;"><i>Figure 3: A CAD rendering of our new solar tracker setup, with a gimbal and wooden base</i></p>
             <p> One minor difference between my design and the one that 
                 most people use was that I rotated the photoresistors by 45&deg;, as illustrated in Figure 4, because I discovered that this approach allows more accurate control of the solar tracker.</p>
-            <div class="center"><img src="imgs/ldr_positions.jpg" width=65% height=65%></div>
+            <div class="center"><img src="imgs/LDR_Positions.png" width=65% height=65%></div>
             <p style="text-align: center;"><i>Figure 4: A side-by-side comparison of the original and new arrangement of the photoresistors</i></p>
             <p>Figure 5 illustrates the new tracker's circuit diagram. The motors are driven by the L293D motor driver IC, which is controlled by the Arduino based on the inputs from the photoresistors. The limit sensors 
                 are directly connected to the Arduino to prevent the motors from overrotating and to identify the angles of the tracker during the initialization stage right after being powered up. The switching 
@@ -98,7 +116,7 @@
             </p>
             <div class="cadviewer" style="width: 80%; margin: auto;">
                 <iframe
-                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/New_Tracker_Circuit.dwg&mode=review&toolbar=1"
+                src="https://mlightcad.com/embed.html?url=https://lukejiang9020.github.io/solartrackers/drawings/New_Tracker_Circuit.dwg&mode=review&toolbar=1&theme=light"
                 style="width:100%;height:600px;border:0"
                 allowfullscreen>
                 </iframe>
@@ -177,22 +195,8 @@
                 and the fixed panel severely lags behind both the single and dual axis tracker. This is because the experiment was conducted in the middle 
                 of the summer, where the sun is almost at the apex of the sky. 
             </p>
-            <div class="center"><img src="imgs/energy_graph.png" width=60% height=60%></div>
-            <div style="background-color: black; width: 80%; margin: auto; padding: 2%;">
-                <h3 style="font-size: 20px;">Total Current Generation (in Ah) of Solar Panel from 6:45 AM to 6:15 PM</h2>
-                <table class="center">
-                    <tr>
-                        <th>Fixed at 34&deg;</th>
-                        <th>Single Axis</th>
-                        <th>Dual Axis</th>
-                    </tr>
-                    <tr>
-                        <td>7.249</td>
-                        <td>10.093</td>
-                        <td>10.355</td>
-                    </tr>
-                </table>
-            </div>
+            <div class="center"><img src="imgs/energy_graph.png" width="65%" height="65%"></div>
+            <div class="center"><img src="imgs/bar_chart (1).png" width="65%" height="65%"></div>
             <p style="text-align: center;"><i>Figure 10: A graph of solar panel current production from 6:15 AM to 6:45 PM, measured in 30 minute intervals</i></p>
             <button type="button" class="dataTable" id="tableViewer">View raw data</button>
             <div class="collapsible_content">
@@ -410,8 +414,8 @@
         var btnId = document.getElementById("expandable");
         var btn2Id = document.getElementById("tableViewer");
 
-        expandContent(coll, btnId, "View code sample", "Collapse code sample", "teal", "red");
-        expandContent(coll2, btn2Id, "View raw data", "Collapse raw data", "teal", "red");
+        expandContent(coll, btnId, "View code sample", "Collapse code sample", "rgb(19, 19, 221)", "red");
+        expandContent(coll2, btn2Id, "View raw data", "Collapse raw data", "rgb(19, 19, 221)", "red");
 
     </script>
 </html>
