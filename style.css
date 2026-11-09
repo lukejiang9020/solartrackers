@@ -9,27 +9,24 @@
 }
 
 @font-face {
+    font-family: 'Roboto_Bold';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Lato_Regular';
     src: url('fonts/Lato-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Lato_Italic';
     src: url('fonts/Lato-Italic.ttf') format('truetype');
-    font-weight: normal;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Lato_Bold';
     src: url('fonts/Lato-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -49,6 +46,7 @@ h2 {
     font-weight: normal;
     font-size: 36px;
     margin-left: 3%;
+    color: rgb(19, 19, 221);
 }
 
 h3 {
@@ -111,13 +109,10 @@ button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border: 0px;
     border-radius: 6px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 20px;
     color: white;
     font-size: 14px;
-    font-family: 'Roboto_Regular';
+    font-family: 'Roboto_Bold';
 }
 
 .collapsible, .dataTable {
@@ -135,6 +130,7 @@ button {
 
 .collapsible:hover, .dataTable:hover {
     border-radius: 0px;
+    transition-duration: 0.3s;
 }
 
 .collapsible_content {
@@ -148,10 +144,31 @@ button:hover {
     color: white;
     border-radius: 6px;
     cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+button:active {
+    background-color: rgb(13, 13, 148);
 }
 
 .center {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+
+.pTitle, .cInfo {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('imgs/title_image.jpg');
+    background-position: center;
+}
+
+.dateInfo {
+    background-color: rgb(19, 19, 221);
+    padding-top: 0.05%;
+    padding-bottom: 0.05%;
+}
+
+td {
+    text-align: center;
 }
