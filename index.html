@@ -82,18 +82,20 @@
             <div class="center"><a href="gimbal_new/gimbal_new.ino"><button>DOWNLOAD TRACKER CODE</strong></button></a></div>
             <p>A software program was created for the Arduino Uno to make the solar tracker work as intended. The software can be broken down into two parts: initialization and tracking. Before initialization, 
                 the solar tracker must be positioned where the two side-by-side horizontal limit sensors are approximately facing South. The initialization portion  
-                is executed once: when the Arduino first receives power (either through the USB port or the DC jack). It sends a HIGH signal 
+                is executed once when the Arduino first powers up (either through the USB port or the DC jack). The purpose of the initialization sequence is to make sure the 
+                sensors are in the proper position to respond to sunlight. 
+                <!--It sends a HIGH signal 
                 to digital pin 10 and a LOW signal to pin 11 to activate the vertical motor to level out the solar panel. The solar panel continues to rotate after levelling out 
-                until it triggers the lower vertical limit sensor and pulls pin 8 LOW, which causes the software to send a LOW signal to pin 10, stopping the motor. The software then immediately sends a LOW signal 
-                to pin 10 and a HIGH signal to pin 11 to reverse the direction of the 
-                motor rotation for 5 seconds, after which the software sends a LOW signal to pin 11 to stop the vertical motor. The software then sends a HIGH signal to pin 13 and a LOW signal to pin 12 to activate the horizontal motor and turn the panel counterclockwise until it triggers the 
-                horizontal limit sensor, after which pin 7 is pulled LOW, causing the software to send a LOW signal to pin 13, stopping the motor. The software then immediately sends a LOW signal to pin 13 and a HIGH signal to pin 12, reversing the direction of the motor rotation for 15 seconds. Finally, a LOW signal is sent to pin 12 to stop the 
-                horizontal motor.</p>
-            <p>
-                Then, the Arduino begins to gather voltage readings from the four photoresistors. If it is afternoon when the initialization process begins, then the bottom sensor will receive more light than the top, causing the software to send a 
+                until it triggers the lower vertical limit sensor and pulls pin 8 LOW, which causes the microcontroller to send a LOW signal to pin 10, stopping the motor. The microcontroller then immediately sends a LOW signal 
+                to pin 10 and a HIGH signal to pin 11 to , after which the microcontroller sends a LOW signal to pin 11 to stop the vertical motor. The microcontroller then sends a HIGH signal to pin 13 and a LOW signal to pin 12 to activate the horizontal motor and turn the panel counterclockwise until it triggers the 
+                horizontal limit sensor, after which pin 7 is pulled LOW, causing the microcontroller to send a LOW signal to pin 13, stopping the motor. The microcontroller then immediately sends a LOW signal to pin 13 and a HIGH signal to pin 12, reversing the direction of the motor rotation for 15 seconds. Finally, a LOW signal is sent to pin 12 to stop the 
+                horizontal motor.</p> -->
+            </p>
+            <!-- <p>
+                Then, the Arduino begins to gather voltage readings from the four photoresistors. If it is afternoon when the initialization process begins, then the bottom sensor will receive more light than the top, causing the microcontroller to send a 
                 LOW signal to pin 13 and a HIGH signal to pin 12, turning the panel clockwise for 16 seconds before stopping. If, however, the initialization process begins in the morning, then the aforementioned process will NOT execute. Regardless of whether or not 
-                the initialization begins in the morning or afternoon, the software will always send a LOW signal to pin 10 and a HIGH signal to increase the vertical angle of the solar panel for 5 seconds. Afterwards, the initialization process stops.
-            </p> 
+                the initialization begins in the morning or afternoon, the microcontroller will always send a LOW signal to pin 10 and a HIGH signal to increase the vertical angle of the solar panel for 5 seconds. Afterwards, the initialization process stops.
+            </p>  -->
 <!--             <p>For example, when the top photoresistor receives more light than the bottom, the Arduino sends a HIGH signal to pin 10 and a LOW signal to pin 11, as highlighted by the following code block: </p>
             <button type="button" class="collapsible" id="expandable">View code sample</button>
             <div class="collapsible_content">
