@@ -1,56 +1,43 @@
 @font-face {
-    font-family: 'Roboto_Regular';
-    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-family: 'Segoe UI Variable';
+    src: url('fonts/SegUIVar.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Roboto_Lt';
-    src: url('fonts/Roboto-Light.ttf') format('truetype');
+    font-family: 'Segoe UI';
+    src: url('fonts/segoeui.ttf') format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: 'Roboto_Bold';
-    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-family: 'Segoe UI Bold';
+    src: url('fonts/segoeuib.ttf') format('truetype');
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Lato_Regular';
-    src: url('fonts/Lato-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Lato_Italic';
-    src: url('fonts/Lato-Italic.ttf') format('truetype');
+    font-family: 'Segoe UI Italic';
+    src: url('fonts/segoeuii.ttf') format('truetype');
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Lato_Bold';
-    src: url('fonts/Lato-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Lato_Lt';
-    src: url('fonts/Lato-Light.ttf') format('truetype');
-}
-
 h1 {
-    font-family: 'Roboto_Lt', -apple-system, system-ui;
+    font-family: 'Segoe UI Variable', -apple-system, system-ui;
     font-weight: normal;
     font-size: 72px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Roboto_Lt', -apple-system, system-ui;
+    font-family: 'Segoe UI Variable', -apple-system, system-ui;
     font-weight: normal;
     font-size: 36px;
     margin-left: 3%;
-    color: rgb(19, 19, 221);
+    color: #225cb2;
 }
 
 h3 {
-    font-family: 'Lato_Regular',-apple-system, system-ui;
+    font-family: 'Segoe UI',-apple-system, system-ui;
     font-size: 28px;
     margin-left: 3%;
     font-weight: normal;
@@ -59,7 +46,7 @@ h3 {
 }
 
 p, ul, u, ol {
-    font-family: 'Lato_Regular',-apple-system, system-ui;
+    font-family: 'Segoe UI',-apple-system, system-ui;
     font-size: 16px;
     margin-left: 5%;
     margin-right: 5%;
@@ -69,11 +56,11 @@ p, ul, u, ol {
 }
 
 strong {
-    font-family: 'Lato_Bold', -apple-system, system-ui;
+    font-family: 'Segoe UI Bold', -apple-system, system-ui;
 }
 
 i {
-    font-family: 'Lato_Italic', -apple-system, system-ui;
+    font-family: 'Segoe UI Italic', -apple-system, system-ui;
 }
 
 pre {
@@ -105,14 +92,14 @@ td, th {
 }
 
 button {
-    background-color: rgb(19, 19, 221);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: #225cb2;
+    box-shadow: 0 2px 0 #174785;
     border: 0px;
-    border-radius: 6px;
-    padding: 20px;
+    border-radius: 4px;
+    padding: 12px;
     color: white;
     font-size: 14px;
-    font-family: 'Roboto_Bold';
+    font-family: 'Segoe UI';
 }
 
 .collapsible, .dataTable {
@@ -142,7 +129,7 @@ button {
 button:hover {
     background-color: darkblue;
     color: white;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.3s;
 }
@@ -164,7 +151,8 @@ button:active {
 }
 
 .dateInfo {
-    background-color: rgb(19, 19, 221);
+    background: #225cb2;
+    overflow: hidden;
     padding-top: 0.05%;
     padding-bottom: 0.05%;
 }

@@ -2,23 +2,22 @@
 // Copyright (C) 2026 Luke Jiang. All Rights Reserved.
 // final version
 
-constexpr int ldrA = 1; // ldrtop
-constexpr int ldrB = 2; // ldrbottom
-constexpr int ldrC = 3; // ldrleft
-constexpr int ldrD = 0; // ldrright
+// define pins of photoresistors
+constexpr int ldrA = 1;
+constexpr int ldrB = 2;
+constexpr int ldrC = 3;
+constexpr int ldrD = 0;
 
+// create variables for photoresistor voltage readings
 int top = 0;
 int bottom = 0;
 int left = 0;
 int right = 0;
-int night = 0;
-int limitUD = 0;
-int limitLR = 0;
 
+// minimum difference in readings between photoresistors
 constexpr int threshold_value = 25;
 
 void setup() {
-  // put your setup code here, to run once:
   delay(2000);
   Serial.begin(9600);
   Serial.println("BEGIN");
@@ -32,6 +31,8 @@ void setup() {
   pinMode(6, INPUT); // bottom left
   initialize();
 }
+
+// the following functions control movement of the panel
 
 void stopVertical() {
   digitalWrite(10, LOW);
@@ -64,7 +65,6 @@ void moveCW() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   wormgear();
 }
 
@@ -74,7 +74,6 @@ void initialize() {
   while (digitalRead(8) == HIGH) { // while limit sensor has NOT been reached
     moveUp();
   }
-  Serial.println("Limit sensor has been reached!");
 
   stopVertical();
   delay(100);
@@ -82,7 +81,6 @@ void initialize() {
   Serial.print("Pin 8 reading: ");
   Serial.println(digitalRead(8));
   while (digitalRead(8) == LOW) { // while limit sensor is triggered
-    Serial.println("Reversing motor direction...");
     moveDown();
   }
   stopVertical(); // stop vertical motor
@@ -90,47 +88,33 @@ void initialize() {
     moveCCW();
   }
   stopHorizontal();
+  // initializes timer variable
   unsigned long start = millis();
   while (millis() - start < 15000) {
     moveCW();
   }
   stopHorizontal();
-  // top = analogRead(ldrA); // right
-  // bottom = analogRead(ldrB); // left
-  // left = analogRead(ldrC); // bottom
-  // right = analogRead(ldrD); // top
   top = analogRead(ldrD);
   bottom = analogRead(ldrC);
   left = analogRead(ldrB);
   right = analogRead(ldrA);
   delay(2000);
-  if (bottom - top >= 100) {
-    
-    Serial.println("Threshold met!");
+  if (bottom - top >= 100) { // check if the tracker is being powered on in the afternoon
     unsigned long start1 = millis();
     while (millis() - start1 < 16000) {
-      Serial.println("Moving clockwise!");
       moveCW();
     }
     stopHorizontal();
   }
   unsigned long start2 = millis();
   while (millis() - start2 < 5000) {
-    Serial.println("Moving down...");
     moveDown();
   }
   stopVertical();
-  Serial.println("Initialization STOP!");
   delay(2000);
-  Serial.println("GO!");
 }
 
 void wormgear() {
-
-  // top = analogRead(ldrA); // right
-  // bottom = analogRead(ldrB); // left
-  // left = analogRead(ldrC); // bottom
-  // right = analogRead(ldrD); // top
   top = analogRead(ldrD);
   bottom = analogRead(ldrC);
   left = analogRead(ldrB);
@@ -141,15 +125,12 @@ void wormgear() {
   int diffazi = right - left;
 
 
-  // normal operating conditions
-  if (diffelev >= threshold_value && digitalRead(8) == HIGH) { // ensures limit sensor has not been activated
-    // moves solar panel up
+  if (diffelev >= threshold_value && digitalRead(8) == HIGH) {
     moveUp();
   } else if (abs(diffelev) >= threshold_value && diffelev < 0 && digitalRead(9) == HIGH) {
-    // moves solar panel down
     moveDown();
   } else {
-    stopVertical(); // sends LOW signal to both pins 10 and 11
+    stopVertical();
   }
 
 
